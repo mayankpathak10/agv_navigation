@@ -14,7 +14,7 @@ After preparing a map of the environment, the robot uses path planning algorithm
 ## Project Approach:
 1. Develop a custom map in the gazebo.
 	A map containing walls and other obstacles representing industrial workshop scenario is prepared.  
-2. Use g-mapping to get occupancy grid of the map.
+2. Use `frontier_exploration` ros package to get occupancy grid of the map.
 	Using the sensors (lidar for gmapping) avaiable on the turtle bot, 2D occupancy grid map is prepared.
 3. Using this map, a path between two given points (Start point and Destination) is calculated using the below path planning algorithm.
 4. Implement Astar algorithm to find the path.
@@ -52,19 +52,33 @@ This project development is divided into 3 weekly sprints. Detailed Sprint plann
 ## How to build
 < will be updated >
 
-## How to run
+## Demo
 < will be updated >
 
+## How to run
+< will be updated>
+
 ## Testing
+< will be updated >
+#### Code coverage
 < will be updated >
 
 ## Doxygen Documentation
 < will be updated >
 
-## About Authors
-Bhargav Dandamudi: Graduate Student in M.Eng., Robotics, working as Teaching Assitant of Grad. Level Robotics Course. I am intrested to pursue career in Computer vision, planning and Medical Robotics related field. 
+## Known issues and Bugs
+< will be updated >
 
-Mayank Pathak: Graduate Student in M.Eng., Robotics, working as Research Assistant in Sensors and Actuators Lab in the University of Maryland, College Park. I am interested to pursue career in the field of Computer Vision and Machine Learning.
+## Other API and dependencies
+< will be updated >
+
+## Recording a Bag file
+< will be updated >
+
+## About Authors
+__Bhargav Dandamudi:__ Graduate Student in M.Eng., Robotics, working as Teaching Assitant of Grad. Level Robotics Course. I am intrested to pursue career in Computer vision, planning and Medical Robotics related field. 
+
+__Mayank Pathak:__ Graduate Student in M.Eng., Robotics, working as Research Assistant in Sensors and Actuators Lab in the University of Maryland, College Park. I am interested to pursue career in the field of Computer Vision and Machine Learning.
 
 ## License
 MIT License
