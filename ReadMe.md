@@ -15,7 +15,7 @@ After preparing a map of the environment, the robot uses path planning algorithm
 1. Develop a custom map in the gazebo.
 	A map containing walls and other obstacles representing industrial workshop scenario is prepared.  
 2. Use g-mapping to get occupancy grid of the map.
-	Using the sensors (lidar for gmapping) avaiable on the turtle bot, 2D g-map is prepared.
+	Using the sensors (lidar for gmapping) avaiable on the turtle bot, 2D occupancy grid map is prepared.
 3. Using this map, a path between two given points (Start point and Destination) is calculated using the below path planning algorithm.
 4. Implement Astar algorithm to find the path.
 	A* algorithm is one of the best algorithm to approximate the shortest path between two points on a map or graph.  At each step, it proceeds by selecting the node which has lowest sum of the two parameters: movement cost from start node to current node, and heuristic distance between current node and goal node.
@@ -47,6 +47,7 @@ This project development is divided into 3 weekly sprints. Detailed Sprint plann
 	- std_msgs
 	- genmsg
 	- geometry_msgs
+	- gmapping
 
 ## How to build
 < will be updated >
