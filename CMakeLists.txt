@@ -86,7 +86,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES agv_navigation
-  CATKIN_DEPENDS gmapping roscpp rospy std_msgs geometry_msgs sensor_msgs message_generation
+  CATKIN_DEPENDS gmapping roscpp rospy geometry_msgs std_msgs sensor_msgs message_generation
 #  DEPENDS system_lib   
 )
 
@@ -102,17 +102,17 @@ include_directories(
 )
 
 
-add_executable(${PROJECT_NAME}_node src/astar_navigator.cpp)
+#add_executable(${PROJECT_NAME}_node src/astar_navigator.cpp)
 #add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-add_executable(${PROJECT_NAME}_node src/explorer.cpp)
+#add_executable(${PROJECT_NAME}_node src/explorer.cpp)
 #add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(${PROJECT_NAME}_node
-   ${catkin_LIBRARIES}
- )
+# target_link_libraries(${PROJECT_NAME}_node
+#   ${catkin_LIBRARIES}
+# )
 
 
 #############
@@ -132,11 +132,11 @@ if(CATKIN_ENABLE_TESTING)
   find_package(rostest REQUIRED)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 --coverage")
 
-  add_rostest_gtest(test_explorer test/explorer.cpp src/explorer.cpp)
-  target_link_libraries(test_explorer ${catkin_LIBRARIES})
+#  add_rostest_gtest(test_explorer test/explorer.cpp src/explorer.cpp)
+#  target_link_libraries(test_explorer ${catkin_LIBRARIES})
 
-  add_rostest_gtest(test_navigator test/navigatorTest.cpp src/astar_navigator.cpp)
-  target_link_libraries(test_robot ${catkin_LIBRARIES})
+#  add_rostest_gtest(test_navigator test/navigatorTest.cpp src/astar_navigator.cpp)
+#  target_link_libraries(test_robot ${catkin_LIBRARIES})
 
 
 endif()
