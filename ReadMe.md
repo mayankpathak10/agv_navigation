@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.com/mayankpathak10/AGV_Navigation.svg?branch=master)](https://travis-ci.com/mayankpathak10/AGV_Navigation) [![Coverage Status](https://coveralls.io/repos/github/mayankpathak10/AGV_Navigation/badge.svg?branch=master)](https://coveralls.io/github/mayankpathak10/AGV_Navigation?branch=master) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
+[![Build Status](https://travis-ci.com/mayankpathak10/AGV_Navigation.svg?branch=master)](https://travis-ci.com/mayankpathak10/AGV_Navigation) [![Coverage Status](https://coveralls.io/repos/github/mayankpathak10/AGV_Navigation/badge.svg?branch=master)](https://coveralls.io/github/mayankpathak10/AGV_Navigation?branch=master) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 
 ## Overview:
@@ -10,6 +9,11 @@ We aim to demonstrate that the above-mentioned limitations of AGV can be allevia
 The AGV (robot here) drives around in a simulated world, navigating through obstacles using LIDAR sensor. Whenever an obstacle is recognized, the g-mapping algorithm prepares a binary 2D map of the environment. For example, if the robot finds an obstacle while moving around, like a wall or any solid surface, it refers that coordinates as 1 , meaning that there is a obstacle in front of the robot.
 
 After preparing a map of the environment, the robot uses path planning algorithm (A* algorithm) and finds a optimal path between its current position and the goal point.
+
+## About Authors
+__Bhargav Dandamudi:__ Graduate Student in M.Eng., Robotics, working as Teaching Assitant of Grad. Level Robotics Course. I am intrested to pursue career in Computer vision, planning and Medical Robotics related field. 
+
+__Mayank Pathak:__ Graduate Student in M.Eng., Robotics, working as Research Assistant in Sensors and Actuators Lab in the University of Maryland, College Park. I am interested to pursue career in the field of Computer Vision and Machine Learning.
 
 ## Project Approach:
 1. Develop a custom map in the gazebo.
@@ -74,11 +78,6 @@ This project development is divided into 3 weekly sprints. Detailed Sprint plann
 
 ## Recording a Bag file
 < will be updated >
-
-## About Authors
-__Bhargav Dandamudi:__ Graduate Student in M.Eng., Robotics, working as Teaching Assitant of Grad. Level Robotics Course. I am intrested to pursue career in Computer vision, planning and Medical Robotics related field. 
-
-__Mayank Pathak:__ Graduate Student in M.Eng., Robotics, working as Research Assistant in Sensors and Actuators Lab in the University of Maryland, College Park. I am interested to pursue career in the field of Computer Vision and Machine Learning.
 
 ## License
 MIT License
