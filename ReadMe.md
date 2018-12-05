@@ -28,9 +28,9 @@ __Mayank Pathak:__ Graduate Student in M.Eng., Robotics, working as Research Ass
 6. Quality is assured by delivering Unit Tests for overall source code and full coverage in coveralls. 
 
 The UML diagrams for the project are as follows:
--UML Activity Diagram
+### UML Activity Diagram
 ![activity_diag](https://github.com/mayankpathak10/AGV_Navigation/blob/master/images/agv_navigation_ActivityDiagram.jpeg)
--UML Class Diagram
+### UML Class Diagram
 ![class_diag](https://github.com/mayankpathak10/AGV_Navigation/blob/master/images/agv_navigation_classDiagram.jpeg)
 
 ## Deveopment Using Solo Iterative Process (SIP) and Test-Driven Development (TDD)
