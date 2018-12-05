@@ -27,6 +27,12 @@ __Mayank Pathak:__ Graduate Student in M.Eng., Robotics, working as Research Ass
 	After the path is known, turtlebot navigates in the simulated gazebo world using the node coordinates.
 6. Quality is assured by delivering Unit Tests for overall source code and full coverage in coveralls. 
 
+The UML diagrams for the project are as follows:
+-UML Activity Diagram
+![activity_diag](https://github.com/mayankpathak10/AGV_Navigation/blob/master/images/agv_navigation_ActivityDiagram.jpeg)
+-UML Class Diagram
+![class_diag](https://github.com/mayankpathak10/AGV_Navigation/blob/master/images/agv_navigation_classDiagram.jpeg)
+
 ## Deveopment Using Solo Iterative Process (SIP) and Test-Driven Development (TDD)
 In development of this software module, along with test-driven development(TDD), solo interative process (SIP) was followed. Using SIP this software module is divided into two parts: the product backlog, and code of the software.
 
@@ -52,6 +58,11 @@ This project development is divided into 3 weekly sprints. Detailed Sprint plann
 	- genmsg
 	- geometry_msgs
 	- gmapping
+
+## Custom Gazebo World
+A Gazebo simulation world of dimensions 10m x 10m (length x width) is prepared to implement this project.
+
+![Gazebo_world](https://github.com/mayankpathak10/AGV_Navigation/blob/master/images/gazebo_world.jpg)
 
 ## How to build
 < will be updated >
