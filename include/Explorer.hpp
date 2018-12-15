@@ -27,26 +27,29 @@
 #define INCLUDE_EXPLORER_HPP_
 
 #include <geometry_msgs/Twist.h>
-#include<ros/ros.h>
-#include<sensor_msgs/LaserScan.h>
+#include <geometry_msgs/Twist.h>
+#include <ros/ros.h>
+#include <sensor_msgs/LaserScan.h>
 
-class explorer {
-  public:
+class Explorer {
+ public:
     // default constructor
-    explorer();
-    // default destructor
-    ~explorer();
+    Explorer();
 
-    void serviceFunction(void);
+    float obstDist();
+    bool rotateBot();
+    void setRotation();
+    void ScanCallback(const sensor_msgs::LaserScan::ConstPtr& input);
+    void RotatetimerCallback(const ros::TimerEvent& event);
+    geometry_msgs::Twist direction();
 
-  private:
-    ros::NodeHandle nh_;
-    std::vector<std::vector<int4d>> grid_;
-    LaserScan laser_scan_;
-    ros::ServiceServer server_;
+    ~Explorer();
+
+ private:
+    bool rotaFlag;
+    float distObst;
+    int rotateCount;
+    geometry_msgs::Twist action;
 };
 
-
-
-
-#endif  // INCLUDE_EXPLORER_HPP_
+#endif   // INCLUDE_EXPLORER_HPP_
