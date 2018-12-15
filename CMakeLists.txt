@@ -109,18 +109,20 @@ INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIRS})
 add_executable(${PROJECT_NAME}_node src/astar_navigator.cpp 
 									src/map.cpp 
 									src/nodes.cpp 
-									src/main.cpp)
+									src/main.cpp
+                                    src/Explore.cpp
+                                    src/Agv.cpp)
 
-add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+                                #add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 #add_executable(${PROJECT_NAME}_node src/explorer.cpp)
 #add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(${PROJECT_NAME}_node
-#   ${catkin_LIBRARIES}
-# )
+ target_link_libraries(${PROJECT_NAME}_node
+   ${catkin_LIBRARIES}
+ )
 
 
 #############
@@ -136,17 +138,23 @@ add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EX
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-if(CATKIN_ENABLE_TESTING)
-  find_package(rostest REQUIRED)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 --coverage")
-
-#  add_rostest_gtest(test_explorer test/explorer.cpp src/explorer.cpp)
-#  target_link_libraries(test_explorer ${catkin_LIBRARIES})
-
-#  add_rostest_gtest(test_navigator test/navigatorTest.cpp src/astar_navigator.cpp)
-#  target_link_libraries(test_robot ${catkin_LIBRARIES})
 
 
-endif()
+#if(CATKIN_ENABLE_TESTING)
+    #find_package(rostest REQUIRED)
+  #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 --coverage")
+  #add_rostest_gtest(AgvTest
+  #					test/terrapinavigatorTest.launch 
+  #					test/AgvTest.cpp 
+  #					test/NavigatorTest.cpp 
+  #				    src/Agv.cpp  
+  #					src/Explore.cpp)
+  #target_link_libraries(terpTest ${catkin_LIBRARIES})
+  # add_dependencies(
+  #	  AgvTest
+  #	  ${catkin_EXPORTED_TARGETS}
+  #)
+  #endif()
+
 
 
