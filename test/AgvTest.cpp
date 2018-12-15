@@ -23,15 +23,18 @@
  * THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include "explorer.hpp"
-#include "astar_navigator.hpp"
+#include "../include/Agv.hpp"
 #include <gtest/gtest.h>
+#include <ros/ros.h>
 
+/**
+ * @brief Unit test to check if messages are being publishes
+ *
+ * Checks if the explore function is publishing twist messages
+ *
+ */
 
-TEST(TEST_NAVIGATOR, testObstacle) {
-    // will be updated
-}
-
-TEST(TEST_NAVIGATOR, testFreeSpace) {
-    // will be updated
+TEST(AgvTest, PublishTest) {
+    Agv a = Agv();
+    EXPECT_EQ(true, a.explore());
 }

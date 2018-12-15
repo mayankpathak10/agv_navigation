@@ -23,9 +23,9 @@
  * THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#include "../include/Explorer.hpp"
 #include <gtest/gtest.h>
 #include <ros/ros.h>
-#include "../include/Explorer.hpp"
 
 /**
  * @brief Unit test to check initial linear motion
