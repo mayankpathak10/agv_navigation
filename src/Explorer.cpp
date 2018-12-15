@@ -23,6 +23,13 @@
  * THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+/**
+ * @file Explorer.cpp
+ * @brief
+ * @author Bhargav Dandamudi and Mayank Pathak
+ * @version 1
+ * @date 2018-12-15
+ */
 #include "../include/Explorer.hpp"
 #include "geometry_msgs/Twist.h"
 #include "ros/ros.h"

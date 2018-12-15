@@ -32,14 +32,6 @@
  * @date 2018-12-04
  */
 
-/* --------------------------------------------------------------------------*
- *
-**
- * @brief  main file to run astar navigation on custom map
- *
- * @Returns  0
- */
-/* --------------------------------------------------------------------------*/
 #include <iostream>
 #include <vector>
 #include "../include/Agv.hpp"
@@ -48,6 +40,15 @@
 #include "../include/map.hpp"
 #include "../include/nodes.hpp"
 
+/**
+* @brief  main file to navigate agv on custom map
+*
+* @Param argc is the argument count
+* @Param argv is the argument vector
+*
+* @Returns 0 if everything runs with no error
+*/
+/* --------------------------------------------------------------------------*/
 int main(int argc, char **argv) {
     // Create the map object
     map blank_map;
@@ -60,7 +61,7 @@ int main(int argc, char **argv) {
     // Show the path on map.
     blank_map.print_path(map, path);
 
-    ros::init(argc, argv, "terrapinavigator");
+    ros::init(argc, argv, "agvnavigator");
     ros::NodeHandle n;
     Agv dora = Agv();
     // sleep for 15 seconds while other packages start
