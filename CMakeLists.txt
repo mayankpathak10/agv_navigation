@@ -143,7 +143,7 @@ add_executable(${PROJECT_NAME}_node src/astar_navigator.cpp
 #if(CATKIN_ENABLE_TESTING)
     #find_package(rostest REQUIRED)
   #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 --coverage")
-  #add_rostest_gtest(AgvTest
+  #add_rostest_gtest(AgvNavTest
   #					test/terrapinavigatorTest.launch 
   #					test/AgvTest.cpp 
   #					test/NavigatorTest.cpp 
@@ -151,7 +151,7 @@ add_executable(${PROJECT_NAME}_node src/astar_navigator.cpp
   #					src/Explore.cpp)
   #target_link_libraries(terpTest ${catkin_LIBRARIES})
   # add_dependencies(
-  #	  AgvTest
+  #	  AgvNavTest
   #	  ${catkin_EXPORTED_TARGETS}
   #)
   #endif()
