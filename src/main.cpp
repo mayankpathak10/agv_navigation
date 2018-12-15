@@ -42,11 +42,13 @@
 /* --------------------------------------------------------------------------*/
 #include <iostream>
 #include <vector>
+#include "../include/Agv.hpp"
+#include "../include/Explorer.hpp"
 #include "../include/astar_navigator.hpp"
 #include "../include/map.hpp"
 #include "../include/nodes.hpp"
 
-int main() {
+int main(int argc, char **argv) {
     // Create the map object
     map blank_map;
     // Store the map with obstacles in a variable.
@@ -57,5 +59,16 @@ int main() {
     std::vector<std::pair<int, int> > path = path_finder.astar_path(map);
     // Show the path on map.
     blank_map.print_path(map, path);
-    return 0;
+
+    ros::init(argc, argv, "terrapinavigator");
+    ros::NodeHandle n;
+    Agv dora = Agv();
+    // sleep for 15 seconds while other packages start
+    ros::Duration(15).sleep();
+    ros::Rate loop_rate(2);
+    while (ros::ok()) {
+	dora.explore();
+	ros::spinOnce();
+	loop_rate.sleep();
+    }
 }
