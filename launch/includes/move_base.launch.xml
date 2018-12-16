@@ -23,9 +23,9 @@
     <rosparam file="$(find turtlebot_navigation)/param/local_costmap_params.yaml" command="load" />   
     <rosparam file="$(find turtlebot_navigation)/param/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find turtlebot_navigation)/param/dwa_local_planner_params.yaml" command="load" />
-    <rosparam file="$(find turtlebot_rrt)/config/move_base_params.yaml" command="load" />
+    <rosparam file="$(find agv_navigation)/config/move_base_params.yaml" command="load" />
     <rosparam file="$(find turtlebot_navigation)/param/global_planner_params.yaml" command="load" />
-    <rosparam file="$(find turtlebot_rrt)/config/rrt_global_planner_params.yaml" command="load" />
+    <rosparam file="$(find agv_navigation)/config/rrt_global_planner_params.yaml" command="load" />
     <!-- external params file that could be loaded into the move_base namespace -->
     <rosparam file="$(arg custom_param_file)" command="load" />
     <param name="step_size_" value="$(arg step_size)"/>
