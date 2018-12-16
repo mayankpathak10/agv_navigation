@@ -21,7 +21,7 @@
  * TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH
  * THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- * @file agv_rrt.hpp
+ * @file agv_navigation.hpp
  * @brief agv_navigation package
  *
  * @section DESCRIPTION
@@ -29,46 +29,42 @@
  *  This file is a header file to declare all the class variables and
  *  functions that will be used for implementing RRT algorithm.
  *
- * @dependencies: This file depends on agv_rrt/vertex.hpp
+ * @dependencies: This file depends on agv_navigation/vertex.hpp
  * @author Bhargav Dandamudi and Mayank Pathak
  * @version 1
  * @date 2018-12-15
  */
 
-#ifndef INCLUDE_AGV_RRT_AGV_RRT_HPP_
-#define INCLUDE_AGV_RRT_AGV_RRT_HPP_
+#ifndef INCLUDE_TURTLEBOT_RRT_TURTLEBOT_RRT_H_
+#define INCLUDE_TURTLEBOT_RRT_TURTLEBOT_RRT_H_
 
-
-
-
+/** include ROS libraries **/
 #include <ros/ros.h>
+
 #include <move_base_msgs/MoveBaseAction.h>
+
 /** for global path planner interface **/
-#include <angles/angles.h>
-#include <base_local_planner/costmap_model.h>
-#include <base_local_planner/world_model.h>
-#include <costmap_2d/costmap_2d.h>
 #include <costmap_2d/costmap_2d_ros.h>
-#include <geometry_msgs/PoseStamped.h>
+#include <costmap_2d/costmap_2d.h>
 #include <nav_core/base_global_planner.h>
+#include <geometry_msgs/PoseStamped.h>
+#include <angles/angles.h>
+#include <base_local_planner/world_model.h>
+#include <base_local_planner/costmap_model.h>
+
 /** include standard libraries **/
-#include <cmath>
 #include <iostream>
+#include <cmath>
 #include <set>
 #include <string>
-#include <utility>
 #include <vector>
+#include <utility>
 #include <boost/random.hpp>
-/** include ROS libraries **/
-
-
 
 /** Local includes **/
-#include "agv_rrt/vertex.hpp"
+#include "turtlebot_rrt/vertex.hpp"
 
-
-
-namespace agv_rrt {
+namespace turtlebot_rrt {
 class RRTPlanner : public nav_core::BaseGlobalPlanner {
   public:
     /**
@@ -88,7 +84,8 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     * @param name ROS NodeHandle name
     * @param costmap_ros cost_map ros wrapper
     */
-    void initialize(std::string name, costmap_2d::Costmap2DROS* costmap_ros);
+    void initialize(std::string name,
+                    costmap_2d::Costmap2DROS* costmap_ros);
 
     /**
     * @brief follows the virtual method of the base class
@@ -105,12 +102,16 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     * @brief returns the obstacle map
     * @return std::vector<bool> Unsafe cells are false, safe cells are true
     */
-    std::vector<bool> getObstacleMap() { return obstacle_map_; }
+    std::vector<bool> getObstacleMap() {
+        return obstacle_map_;
+    }
 
     /**
     * @brief returns the rrt vertex tree
     */
-    std::vector<agv_rrt::Vertex> getVertexTree() { return vertex_list_; }
+    std::vector<turtlebot_rrt::Vertex> getVertexTree() {
+        return vertex_list_;
+    }
 
     /**
     * @brief Gets a random point in the map space
@@ -130,7 +131,7 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     * @brief adds a new vertex to the rrt vertex tree
     * @param new_vertex the new vertex to be added
     */
-    void addVertex(agv_rrt::Vertex new_vertex) {
+    void addVertex(turtlebot_rrt::Vertex new_vertex) {
         vertex_list_.push_back(new_vertex);
     }
 
@@ -166,13 +167,14 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     /**
     * @brief builds the plan from vertices and returns in PoseStamped
     * @param goal_index the index of the vertex that has reached the goal
-    * @param start the starting coordinate of the robot as passed to makePlan
-    * @param goal the goal coordinate of the robot as passed to makePlan
+    * @param start the starting location of the robot as passed to makePlan
+    * @param goal the goal location of the robot as passed to makePlan
     * @return a vector of geometry_msgs:PoseStamped from the start to the goal
     */
-    std::vector<geometry_msgs::PoseStamped> BuildPlan(
-        int goal_index, const geometry_msgs::PoseStamped& start,
-        const geometry_msgs::PoseStamped& goal);
+    std::vector<geometry_msgs::PoseStamped>
+    BuildPlan(int goal_index,
+              const geometry_msgs::PoseStamped& start,
+              const geometry_msgs::PoseStamped& goal);
 
     /**
     * @brief returns the best path
@@ -185,12 +187,12 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
 
     /**
     * @brief Checks if the path is safe between start_point and end_point
-    * @param start_point starting point coordinate
-    * @param end_point ending point coordinate
+    * @param start_point starting point location
+    * @param end_point ending point location
     * @return true if path between points does not intersect obstacles
     */
-    bool ObstacleFree(std::pair<float, float> start_point,
-                      std::pair<float, float> end_point);
+    bool IsSafe(std::pair<float, float> start_point,
+                std::pair<float, float> end_point);
 
   private:
     /**
@@ -281,7 +283,7 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     /**
     * @brief List of vertices
     */
-    std::vector<agv_rrt::Vertex> vertex_list_;
+    std::vector<turtlebot_rrt::Vertex> vertex_list_;
 };
-}   // namespace agv_rrt
-#endif   // INCLUDE_AGV_RRT_AGV_RRT_HPP_
+}  // namespace turtlebot_rrt
+#endif  // INCLUDE_TURTLEBOT_RRT_TURTLEBOT_RRT_H_

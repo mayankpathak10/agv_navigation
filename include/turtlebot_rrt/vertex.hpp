@@ -35,13 +35,14 @@
  * @date 2018-12-15
  */
 
-#ifndef INCLUDE_AGV_RRT_VERTEX_HPP_
-#define INCLUDE_AGV_RRT_VERTEX_HPP_
+
+#ifndef INCLUDE_TURTLEBOT_RRT_VERTEX_H_
+#define INCLUDE_TURTLEBOT_RRT_VERTEX_H_
 
 #include <cmath>
 #include <utility>
 
-namespace agv_rrt {
+namespace turtlebot_rrt {
 class Vertex {
   private:
     /**
@@ -85,11 +86,11 @@ class Vertex {
     ~Vertex() {}
 
     /**
-     * @brief sets the coordinate
-     * @param x x coordinate of vertex
-     * @param y y coordinate of vertex
+     * @brief sets the location
+     * @param x x location of vertex
+     * @param y y location of vertex
      */
-    void set_coordinate(float x, float y);
+    void set_location(float x, float y);
 
     /**
      * @brief sets the index of the vertex
@@ -104,10 +105,10 @@ class Vertex {
     void set_parent(int index);
 
     /**
-     * @brief returns the x,y coordinate of the vertex
+     * @brief returns the x,y location of the vertex
      * @return returns std::pair<x,y>
      */
-    std::pair<float, float> get_coordinate();
+    std::pair<float, float> get_location();
 
     /**
      * @brief returns the index of the vertex
@@ -135,6 +136,6 @@ class Vertex {
         return (x_ != v.x_ || y_ != v.y_ || parent_index_ != v.parent_index_);
     }
 };
-}   // namespace agv_rrt
+}  // namespace turtlebot_rrt
 
-#endif   // INCLUDE_AGV_RRT_VERTEX_HPP_
+#endif  // INCLUDE_TURTLEBOT_RRT_VERTEX_H_
