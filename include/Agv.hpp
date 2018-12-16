@@ -31,8 +31,8 @@
  */
 #include "./Explorer.hpp"
 
-#ifndef TERRAPINAVIGATOR_INCLUDE_TERRAPINAVIGATOR_TURTLE_H_
-#define TERRAPINAVIGATOR_INCLUDE_TERRAPINAVIGATOR_TURTLE_H_
+#ifndef AGV_NAVIGATION_INCLUDE_AGV_HPP_
+#define AGV_NAVIGATION_INCLUDE_AGV_HPP_
 /**
  * @brief Agv class
  *
@@ -41,7 +41,7 @@
  *
  */
 class Agv {
- public:
+  public:
     /**
      * @brief Constructor for Agv Class
      */
@@ -59,7 +59,7 @@ class Agv {
      */
     ~Agv();
 
- private:
+  private:
     ros::NodeHandle n;
     /**
       * @brief Creates Explorer Object
@@ -83,4 +83,4 @@ class Agv {
     ros::Publisher actionPub;
 };
 
-#endif /* TERRAPINAVIGATOR_INCLUDE_TERRAPINAVIGATOR_TURTLE_H_ */
+#endif /* AGV_NAVIGATION_INCLUDE_AGV_HPP_ */

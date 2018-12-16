@@ -30,16 +30,15 @@
  * @date 2018-12-15
  */
 
-#ifndef INCLUDE_EXPLORER_HPP_
-#define INCLUDE_EXPLORER_HPP_
+#ifndef AGV_NAVIGATION_INCLUDE_EXPLORER_HPP_
+#define AGV_NAVIGATION_INCLUDE_EXPLORER_HPP_
 
-#include <geometry_msgs/Twist.h>
 #include <geometry_msgs/Twist.h>
 #include <ros/ros.h>
 #include <sensor_msgs/LaserScan.h>
 
 class Explorer {
- public:
+  public:
     /* ---------------------------------------------------------------------*/
     /**
      * @brief  Default Constructor for Explorer Class
@@ -106,7 +105,7 @@ class Explorer {
     /* ----------------------------------------------------------------------*/
     ~Explorer();
 
- private:
+  private:
     /* ----------------------------------------------------------------------*/
     /**
      * @brief flag for rotation of agv
@@ -133,4 +132,4 @@ class Explorer {
     geometry_msgs::Twist action;
 };
 
-#endif   // INCLUDE_EXPLORER_HPP_
+#endif   // AGV_NAVIGATION_INCLUDE_EXPLORER_HPP_
