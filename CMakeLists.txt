@@ -146,7 +146,8 @@ add_executable(${PROJECT_NAME}_node src/main.cpp
 
 if(CATKIN_ENABLE_TESTING)
    find_package(rostest REQUIRED)
- set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 --coverage")
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0")
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage") # enabling coverage
  add_rostest_gtest(AgvNavTest
  					test/agvnavigatorTest.launch
                     test/AgvNavTest.cpp 
