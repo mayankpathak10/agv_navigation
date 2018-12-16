@@ -54,6 +54,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>gmapping</build_depend>
   <build_depend>roscpp</build_depend>  
+  <build_depend>tf</build_depend>  
   <build_depend>roslint</build_depend>  
   <build_depend>nav_core</build_depend>
   <build_depend>costmap_2d</build_depend>
@@ -84,6 +85,7 @@
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
   <exec_depend>pluginlib</exec_depend>
+  <exec_depend>tf</exec_depend>
   <exec_depend>costmap_2d</exec_depend>
   <exec_depend>base_local_planner</exec_depend>
   <exec_depend>nav_core</exec_depend>   
@@ -91,6 +93,7 @@
   <exec_depend>eigen</exec_depend>
   <exec_depend>visualization_msgs</exec_depend>
 
+  <test_depend>rostest</test_depend>
 
   <export>
     <nav_core plugin="${prefix}/rrt_planner_plugin.xml"/>
