@@ -15,10 +15,18 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   sensor_msgs
   message_generation
+  tf
+  roslint
+  nav_core
+  costmap_2d
+  base_local_planner
+  pluginlib
+  visualization_msgs
+  costmap_2d
 )
 
 ## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
+#find_package(Eigen3 REQUIRED)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -83,13 +91,26 @@ find_package(catkin REQUIRED COMPONENTS
 ## catkin specific configuration ##
 ###################################
 
+
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES agv_navigation
-  CATKIN_DEPENDS gmapping roscpp rospy geometry_msgs std_msgs sensor_msgs message_generation
+  CATKIN_DEPENDS 
+        gmapping 
+        roscpp 
+        rospy 
+        geometry_msgs 
+        std_msgs 
+        sensor_msgs 
+        message_generation
+        pluginlib
+        costmap_2d
+        base_local_planner
+        nav_core
+        visualization_msgs
 #  DEPENDS system_lib   
 )
-
+#
 ###########
 ## Build ##
 ###########
@@ -97,7 +118,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+ include
   ${catkin_INCLUDE_DIRS}
 )
 # Including SDL into CMAKE
@@ -113,9 +134,9 @@ include_directories(
 #                                    src/Agv.cpp)
 add_executable(${PROJECT_NAME}_node src/main.cpp
                                     src/Explorer.cpp
-                                    src/Agv.cpp)
-
-
+                                    src/Agv.cpp
+                                    src/agv_rrt.cpp
+                                    src/vertex.cpp)
 
                                 #add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
@@ -153,14 +174,31 @@ if(CATKIN_ENABLE_TESTING)
                     test/AgvNavTest.cpp 
  					test/ExplorerTest.cpp 
                     test/AgvTest.cpp
- 				    src/Agv.cpp  
- 					src/Explorer.cpp)
-                target_link_libraries(AgvNavTest ${catkin_LIBRARIES})
+ 				    test/rrtPathTest.cpp
+                    test/vertexTest.cpp
+                    src/Agv.cpp  
+ 					src/Explorer.cpp
+                    src/agv_rrt.cpp
+                    src/vertex.cpp
+                    )
+  target_link_libraries(AgvNavTest 
+                    rrtPathTest 
+                    vertexTest 
+                    ${catkin_LIBRARIES})
   add_dependencies(
  	  AgvNavTest
+      rrtPathTest 
+      vertexTest 
  	  ${catkin_EXPORTED_TARGETS}
  )
  endif()
 
+ # install(TARGETS ${PROJECT_NAME}
+ # ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+ # LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+ # RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+ # )
 
+ install(DIRECTORY include/${PROJECT_NAME}/ DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
+install(FILES rrt_planner_plugin.xml DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})  
 
