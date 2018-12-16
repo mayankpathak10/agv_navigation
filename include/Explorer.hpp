@@ -1,5 +1,5 @@
-/* Copyright (C)
- * 2018 - Bhargav Dandamudi and Mayank Pathak
+/*
+ * @copyright (c) MIT License 2018 Bhargav Dandamudi, Mayank Pathak
  *
  * MIT License
  *
@@ -21,17 +21,22 @@
  * TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH
  * THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- */
-/**
  * @file Explorer.hpp
- * @brief
+ * @brief agv_navigation package
+ *
+ * @section DESCRIPTION
+ *
+ *  This file is a header file to declare all the class variables and
+ *  functions used for implementing frontier exploration.
+ *
  * @author Bhargav Dandamudi and Mayank Pathak
  * @version 1
  * @date 2018-12-15
  */
 
-#ifndef AGV_NAVIGATION_INCLUDE_EXPLORER_HPP_
-#define AGV_NAVIGATION_INCLUDE_EXPLORER_HPP_
+
+#ifndef INCLUDE_EXPLORER_HPP_
+#define INCLUDE_EXPLORER_HPP_
 
 #include <geometry_msgs/Twist.h>
 #include <ros/ros.h>
@@ -39,97 +44,75 @@
 
 class Explorer {
   public:
-    /* ---------------------------------------------------------------------*/
     /**
      * @brief  Default Constructor for Explorer Class
      */
-    /* ---------------------------------------------------------------------*/
     Explorer();
 
-    /* ----------------------------------------------------------------------*/
     /**
      * @brief  Get distance from obstacles
      *
      * @Returns   distObst
      */
-    /* ----------------------------------------------------------------------*/
     float obstDist();
 
-    /* ----------------------------------------------------------------------*/
     /**
      * @brief  Get Rota flag which sets the rotation
      *
      * @Returns   Rota Flag
      */
-    /* ----------------------------------------------------------------------*/
     bool rotateBot();
 
-    /* ----------------------------------------------------------------------*/
     /**
      * @brief Set RotaFlag to false
      */
-    /* ----------------------------------------------------------------------*/
     void setRotation();
 
-    /* ----------------------------------------------------------------------*/
     /**
      * @brief scan subscriber to find closest obstacle
      *
      * @Param input is te pointer to array with obstacle distances
      */
-    /* ----------------------------------------------------------------------*/
     void ScanCallback(const sensor_msgs::LaserScan::ConstPtr& input);
 
-    /* ----------------------------------------------------------------------*/
     /**
      * @brief      sets the rota flag to true every 45 sec
      * @Param event is the ros::TimerEvent structure
      * @return None
      */
-    /* ----------------------------------------------------------------------*/
     void RotatetimerCallback(const ros::TimerEvent& event);
 
-    /* ----------------------------------------------------------------------*/
     /**
      * @brief  generate twist messages to move agv
      *
      * @Returns   Twist messages(action)
      */
-    /* ----------------------------------------------------------------------*/
     geometry_msgs::Twist direction();
 
-    /* ----------------------------------------------------------------------*/
     /**
      * @brief  Destructor for navigator class
      */
-    /* ----------------------------------------------------------------------*/
     ~Explorer();
 
   private:
-    /* ----------------------------------------------------------------------*/
     /**
      * @brief flag for rotation of agv
      */
-    /* ----------------------------------------------------------------------*/
     bool rotaFlag;
-    /* ----------------------------------------------------------------------*/
+
     /**
      * @brief  to contain distance from obstacles
      */
-    /* ----------------------------------------------------------------------*/
     float distObst;
-    /* ----------------------------------------------------------------------*/
+
     /**
      * @brief counts the number of rotations
      */
-    /* ----------------------------------------------------------------------*/
     int rotateCount;
-    /* ----------------------------------------------------------------------*/
+
     /**
      * @brief  twist messgage for agv to move
      */
-    /* ----------------------------------------------------------------------*/
     geometry_msgs::Twist action;
 };
-
-#endif   // AGV_NAVIGATION_INCLUDE_EXPLORER_HPP_
+#endif   // INCLUDE_EXPLORER_HPP_

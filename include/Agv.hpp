@@ -1,5 +1,5 @@
-/* Copyright (C)
- * 2018 - Bhargav Dandamudi and Mayank Pathak
+/*
+ * @copyright (c) MIT License 2018 Bhargav Dandamudi, Mayank Pathak
  *
  * MIT License
  *
@@ -21,18 +21,26 @@
  * TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH
  * THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- */
-/**
  * @file Agv.hpp
- * @brief
+ * @brief agv_navigation package
+ *
+ * @section DESCRIPTION
+ *
+ *  This file is a header file to declare all the class variables and
+ *  functions that will be used for frontier exploration on turtlebot.
+ *
+ * @dependencies: This file depends on Explorer.hpp
  * @author Bhargav Dandamudi and Mayank Pathak
  * @version 1
  * @date 2018-12-15
  */
+
+
+
 #include "./Explorer.hpp"
 
-#ifndef AGV_NAVIGATION_INCLUDE_AGV_HPP_
-#define AGV_NAVIGATION_INCLUDE_AGV_HPP_
+#ifndef INCLUDE_AGV_HPP_
+#define INCLUDE_AGV_HPP_
 /**
  * @brief Agv class
  *
@@ -83,4 +91,4 @@ class Agv {
     ros::Publisher actionPub;
 };
 
-#endif /* AGV_NAVIGATION_INCLUDE_AGV_HPP_ */
+#endif /* INCLUDE_AGV_HPP_ */

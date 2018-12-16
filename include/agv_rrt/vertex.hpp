@@ -1,5 +1,5 @@
-/* Copyright (C)
- * 2018 - Bhargav Dandamudi and Mayank Pathak
+/*
+ * @copyright (c) MIT License 2018 Bhargav Dandamudi, Mayank Pathak
  *
  * MIT License
  *
@@ -21,23 +21,29 @@
  * TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH
  * THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- */
-/**
  * @file vertex.hpp
- * @brief
+ * @brief agv_navigation package
+ *
+ * @section DESCRIPTION
+ *
+ *  This file is a header file to declare all the class variables and
+ *  functions that will be used for rrt algorithm expansion.
+ *  Note that it uses the the same namespace as the 'RRTPlanner' class
+ *
  * @author Bhargav Dandamudi and Mayank Pathak
  * @version 1
- * @date 2018-12-16
+ * @date 2018-12-15
  */
-#ifndef INCLUDE_AGV_RRT_VERTEX_H_
-#define INCLUDE_AGV_RRT_VERTEX_H_
+
+#ifndef INCLUDE_AGV_RRT_VERTEX_HPP_
+#define INCLUDE_AGV_RRT_VERTEX_HPP_
 
 #include <cmath>
 #include <utility>
 
 namespace agv_rrt {
 class Vertex {
- private:
+  private:
     /**
      * @brief the x coordinate of the vertex
      */
@@ -58,7 +64,7 @@ class Vertex {
      */
     int parent_index_;
 
- public:
+  public:
     /**
      * @brief Simple Vertex constructor
      */
@@ -119,16 +125,16 @@ class Vertex {
      * @brief overload of == operator
      */
     bool operator==(const Vertex& v) {
-	return (x_ == v.x_ && y_ == v.y_ && parent_index_ == v.parent_index_);
+        return (x_ == v.x_ && y_ == v.y_ && parent_index_ == v.parent_index_);
     }
 
     /**
      * @brief overload of != operator
      */
     bool operator!=(const Vertex& v) {
-	return (x_ != v.x_ || y_ != v.y_ || parent_index_ != v.parent_index_);
+        return (x_ != v.x_ || y_ != v.y_ || parent_index_ != v.parent_index_);
     }
 };
 }   // namespace agv_rrt
 
-#endif   // INCLUDE_AGV_RRT_VERTEX_H_
+#endif   // INCLUDE_AGV_RRT_VERTEX_HPP_

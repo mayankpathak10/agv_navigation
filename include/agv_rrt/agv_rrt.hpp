@@ -1,5 +1,5 @@
-/* Copyright (C)
- * 2018 - Bhargav Dandamudi and Mayank Pathak
+/*
+ * @copyright (c) MIT License 2018 Bhargav Dandamudi, Mayank Pathak
  *
  * MIT License
  *
@@ -21,22 +21,28 @@
  * TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH
  * THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- */
-/**
- * @file agv_rrt.h
- * @brief
+ * @file agv_rrt.hpp
+ * @brief agv_navigation package
+ *
+ * @section DESCRIPTION
+ *
+ *  This file is a header file to declare all the class variables and
+ *  functions that will be used for implementing RRT algorithm.
+ *
+ * @dependencies: This file depends on agv_rrt/vertex.hpp
  * @author Bhargav Dandamudi and Mayank Pathak
  * @version 1
- * @date 2018-12-16
+ * @date 2018-12-15
  */
-#ifndef INCLUDE_AGVBOT_RRT_TURTLEBOT_RRT_H_
-#define INCLUDE_AGVBOT_RRT_TURTLEBOT_RRT_H_
 
-/** include ROS libraries **/
+#ifndef INCLUDE_AGV_RRT_AGV_RRT_HPP_
+#define INCLUDE_AGV_RRT_AGV_RRT_HPP_
+
+
+
+
 #include <ros/ros.h>
-
 #include <move_base_msgs/MoveBaseAction.h>
-
 /** for global path planner interface **/
 #include <angles/angles.h>
 #include <base_local_planner/costmap_model.h>
@@ -45,22 +51,26 @@
 #include <costmap_2d/costmap_2d_ros.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <nav_core/base_global_planner.h>
-
 /** include standard libraries **/
-#include <boost/random.hpp>
 #include <cmath>
 #include <iostream>
 #include <set>
 #include <string>
 #include <utility>
 #include <vector>
+#include <boost/random.hpp>
+/** include ROS libraries **/
+
+
 
 /** Local includes **/
-#include "agv_rrt/vertex.h"
+#include "agv_rrt/vertex.hpp"
+
+
 
 namespace agv_rrt {
 class RRTPlanner : public nav_core::BaseGlobalPlanner {
- public:
+  public:
     /**
     * @brief Constructor for RRTPlanner
     */
@@ -88,8 +98,8 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     * @return bool, true
     */
     bool makePlan(const geometry_msgs::PoseStamped& start,
-		  const geometry_msgs::PoseStamped& goal,
-		  std::vector<geometry_msgs::PoseStamped>& plan);
+                  const geometry_msgs::PoseStamped& goal,
+                  std::vector<geometry_msgs::PoseStamped>& plan);
 
     /**
     * @brief returns the obstacle map
@@ -121,7 +131,7 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     * @param new_vertex the new vertex to be added
     */
     void addVertex(agv_rrt::Vertex new_vertex) {
-	vertex_list_.push_back(new_vertex);
+        vertex_list_.push_back(new_vertex);
     }
 
     /**
@@ -131,7 +141,7 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     * @return euclidean distance between the points
     */
     float GetDistance(std::pair<float, float> start_point,
-		      std::pair<float, float> end_point);
+                      std::pair<float, float> end_point);
 
     /**
     * @brief Moves from the closest vertex towards the random point
@@ -144,7 +154,7 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     * @return true if a move was made, false if blocked by obstacle
     */
     bool MoveTowardsPoint(int closest_vertex,
-			  std::pair<float, float> random_point);
+                          std::pair<float, float> random_point);
 
     /**
     * @brief Is vertex within goal_radius_ of the goal
@@ -161,8 +171,8 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     * @return a vector of geometry_msgs:PoseStamped from the start to the goal
     */
     std::vector<geometry_msgs::PoseStamped> BuildPlan(
-	int goal_index, const geometry_msgs::PoseStamped& start,
-	const geometry_msgs::PoseStamped& goal);
+        int goal_index, const geometry_msgs::PoseStamped& start,
+        const geometry_msgs::PoseStamped& goal);
 
     /**
     * @brief returns the best path
@@ -171,7 +181,7 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     * @return returns the index of the point that reaches the goal
     */
     int FindPath(const geometry_msgs::PoseStamped& start,
-		 const geometry_msgs::PoseStamped& goal);
+                 const geometry_msgs::PoseStamped& goal);
 
     /**
     * @brief Checks if the path is safe between start_point and end_point
@@ -180,9 +190,9 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     * @return true if path between points does not intersect obstacles
     */
     bool ObstacleFree(std::pair<float, float> start_point,
-		      std::pair<float, float> end_point);
+                      std::pair<float, float> end_point);
 
- private:
+  private:
     /**
     * @brief ROS node handle
     */
@@ -274,4 +284,4 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     std::vector<agv_rrt::Vertex> vertex_list_;
 };
 }   // namespace agv_rrt
-#endif   // INCLUDE_AGVBOT_RRT_TURTLEBOT_RRT_H_
+#endif   // INCLUDE_AGV_RRT_AGV_RRT_HPP_

@@ -1,5 +1,5 @@
-/* Copyright (C)
- * 2018 - Bhargav Dandamudi and Mayank Pathak
+/*
+ * @copyright (c) MIT License 2018 Bhargav Dandamudi, Mayank Pathak
  *
  * MIT License
  *
@@ -21,19 +21,31 @@
  * TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH
  * THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- */
-/**
- * @file Agv.cpp
- * @brief
+ * @file  Agv.cpp
+ * @brief agv_navigation package
+ *
+ * @section DESCRIPTION
+ *
+ *  This file implements the exploration algorithm for turtlebot.
+ *  it subscribes to laser scan values from turtlebot and passes
+ *  it to explorer class to provide direction to the turtlebot.
+ *
+ *  @Dependencies: This file depends on "Agv.hpp" and "Explorer.hpp"
+ *
  * @author Bhargav Dandamudi and Mayank Pathak
  * @version 1
  * @date 2018-12-15
  */
+
 #include "../include/Agv.hpp"
 #include <ros/ros.h>
 #include <iostream>
 #include "../include/Explorer.hpp"
 
+
+/**
+ * @brief      Class to subscribe to laserscan and publish velocities.
+ */
 Agv::Agv() {
     subLaserScan =
         n.subscribe("/scan", 1000, &Explorer::ScanCallback, &explorer);
@@ -41,7 +53,7 @@ Agv::Agv() {
     Rotatetimer = n.createTimer(ros::Duration(40),
                                 &Explorer::RotatetimerCallback, &explorer);
     actionPub = n.advertise<geometry_msgs::Twist>(
-        "/mobile_base/commands/velocity", 100);
+                    "/mobile_base/commands/velocity", 100);
 }
 
 bool Agv::explore() {

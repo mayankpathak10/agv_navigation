@@ -1,5 +1,5 @@
-/* Copyright (C)
- * 2018 - Bhargav Dandamudi and Mayank Pathak
+/*
+ * @copyright (c) MIT License 2018 Bhargav Dandamudi, Mayank Pathak
  *
  * MIT License
  *
@@ -21,10 +21,18 @@
  * TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH
  * THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- */
-/**
- * @file agv_rrt.cpp
- * @brief
+ * @file  agv_rrt.cpp
+ * @brief agv_navigation package
+ *
+ * @section DESCRIPTION
+ *
+ *  This is the main file to implement RRT algorithm on the turtlebot
+ *  simulation in Gazebo. It uses a DWA global planner to generate a
+ *  path to the given goal point and then navigate the robot to the goal
+ *  in the gazebo environment.
+ *
+ *  @Dependencies: This file depends on "agv_rrt.hpp" and "vertex.hpp"
+ *
  * @author Bhargav Dandamudi and Mayank Pathak
  * @version 1
  * @date 2018-12-16
