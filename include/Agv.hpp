@@ -64,7 +64,7 @@ class Agv {
     /**
       * @brief Creates Explorer Object
       */
-    Explorer Explorer = Explorer();
+    Explorer explorer = Explorer();
     /**
      * @brief registers subscriber for image pointers
      */

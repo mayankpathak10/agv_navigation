@@ -36,9 +36,9 @@
 #include <vector>
 #include "../include/Agv.hpp"
 #include "../include/Explorer.hpp"
-#include "../include/astar_navigator.hpp"
-#include "../include/map.hpp"
-#include "../include/nodes.hpp"
+// #include "../include/astar_navigator.hpp"
+// #include "../include/map.hpp"
+// #include "../include/nodes.hpp"
 
 /**
 * @brief  main file to navigate agv on custom map
@@ -51,15 +51,15 @@
 /* --------------------------------------------------------------------------*/
 int main(int argc, char **argv) {
     // Create the map object
-    map blank_map;
+    // map blank_map;
     // Store the map with obstacles in a variable.
-    std::vector<std::vector<int> > map = blank_map.create_map();
+    // std::vector<std::vector<int> > map = blank_map.create_map();
     // Create the astar object with initialization.
-    astar_navigator path_finder(0, 0, 650, 450);
+    // astar_navigator path_finder(0, 0, 650, 450);
     // Store the path found in a variable
-    std::vector<std::pair<int, int> > path = path_finder.astar_path(map);
+    // std::vector<std::pair<int, int> > path = path_finder.astar_path(map);
     // Show the path on map.
-    blank_map.print_path(map, path);
+    // blank_map.print_path(map, path);
 
     ros::init(argc, argv, "agvnavigator");
     ros::NodeHandle n;
@@ -68,8 +68,8 @@ int main(int argc, char **argv) {
     ros::Duration(15).sleep();
     ros::Rate loop_rate(2);
     while (ros::ok()) {
-	dora.explore();
-	ros::spinOnce();
-	loop_rate.sleep();
+        dora.explore();
+        ros::spinOnce();
+        loop_rate.sleep();
     }
 }
