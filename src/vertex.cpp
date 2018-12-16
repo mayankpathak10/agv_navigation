@@ -29,9 +29,9 @@
  * @version 1
  * @date 2018-12-16
  */
-#include "../include/agv_rrt/vertex.hpp"
+#include "turtlebot_rrt/vertex.hpp"
 
-namespace agv_rrt {
+namespace turtlebot_rrt {
 Vertex::Vertex(float x, float y, int index, int parent_index) {
     x_ = x;
     y_ = y;
@@ -39,20 +39,28 @@ Vertex::Vertex(float x, float y, int index, int parent_index) {
     parent_index_ = parent_index;
 }
 
-void Vertex::set_coordinate(float x, float y) {
+void Vertex::set_location(float x, float y) {
     x_ = x;
     y_ = y;
 }
 
-void Vertex::set_index(int index) { index_ = index; }
+void Vertex::set_index(int index) {
+    index_ = index;
+}
 
-void Vertex::set_parent(int parent_index) { parent_index_ = parent_index; }
+void Vertex::set_parent(int parent_index) {
+    parent_index_ = parent_index;
+}
 
-std::pair<float, float> Vertex::get_coordinate() {
+std::pair<float, float> Vertex::get_location() {
     return std::pair<float, float>(x_, y_);
 }
 
-int Vertex::get_index() { return index_; }
+int Vertex::get_index() {
+    return index_;
+}
 
-int Vertex::get_parent() { return parent_index_; }
-}   // namespace agv_rrt
+int Vertex::get_parent() {
+    return parent_index_;
+}
+}  // namespace turtlebot_rrt
