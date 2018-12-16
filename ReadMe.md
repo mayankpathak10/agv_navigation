@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/mayankpathak10/AGV_Navigation.svg?branch=master)](https://travis-ci.com/mayankpathak10/AGV_Navigation) [![Coverage Status](https://coveralls.io/repos/github/mayankpathak10/AGV_Navigation/badge.svg?branch=master)](https://coveralls.io/github/mayankpathak10/AGV_Navigation?branch=master) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.com/mayankpathak10/AGV_Navigation.svg?branch=master)](https://travis-ci.com/mayankpathak10/AGV_Navigation) [![Coverage Status](https://coveralls.io/repos/github/mayankpathak10/agv_navigation/badge.svg?branch=master)](https://coveralls.io/github/mayankpathak10/agv_navigation?branch=master) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 
 ## Overview:
