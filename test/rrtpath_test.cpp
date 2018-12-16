@@ -23,27 +23,29 @@
  *
  */
 /**
- * @file rrtPathTest.cpp
+ * @file vertexTest.cpp
  * @brief
  * @author Bhargav Dandamudi and Mayank Pathak
  * @version 1
  * @date 2018-12-16
  */
+#include "turtlebot_rrt/turtlebot_rrt.hpp"
 #include <gtest/gtest.h>
-#include "../include/agv_rrt/agv_rrt.hpp"
-#include "../include/agv_rrt/vertex.hpp"
+
+
 
 TEST(RRTPlanner, addVertex) {
-    agv_rrt::RRTPlanner* rrt = new agv_rrt::RRTPlanner();
-    agv_rrt::Vertex v(1.0, 2.0, 0, -1);
+    turtlebot_rrt::RRTPlanner* rrt = new turtlebot_rrt::RRTPlanner();
+    turtlebot_rrt::Vertex v(1.0, 2.0, 0, -1);
     rrt->addVertex(v);
-    std::vector<agv_rrt::Vertex> tree = rrt->getVertexTree();
+    std::vector<turtlebot_rrt::Vertex> tree = rrt->getVertexTree();
     EXPECT_EQ(tree.size(), 1);
 }
 
-int main(int argc, char** argv) {
-    ros::init(argc, argv, "rrtPathtest");
-    testing::InitGoogleTest(&argc, argv);
+// int main(int argc, char** argv) {
+//     ros::init(argc, argv, "rrt_test");
+//     testing::InitGoogleTest(&argc, argv);
 
-    return RUN_ALL_TESTS();
-}
+//     return RUN_ALL_TESTS();
+// }
+
