@@ -3,11 +3,12 @@
    <arg name="rec" default="false"/>
 
    <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
-	<arg name="world_file" value="$(find terrapinavigator)/world/demo1.world"/>
+	<arg name="world_file" value="$(find agv_navigation)/world/demo1.world"/>
    </include>
 
-   <node name="agvnavigation" pkg="agvnavigator" type="agvnavigator" output="screen"/>
+   <node name="agv_navigation_node" pkg="agv_navigation" type="agv_navigation_node" output="screen"/>
+   
 
-   <node name="record" pkg="rosbag" type="record" args="-a -O $(find agvnavigator)/results/recording.bag -x /camera/(.*)" if="$(arg rec)"/>
+   <node name="record" pkg="rosbag" type="record" args="-a -O $(find agv_navigation)/results/recording.bag -x /camera/(.*)" if="$(arg rec)"/>
 
 </launch>

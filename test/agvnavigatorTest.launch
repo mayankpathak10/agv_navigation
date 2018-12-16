@@ -1,7 +1,7 @@
 <launch>
    
    
-   <node name="agvnavigator" pkg="agvnavigator" type="agvnavigator" output="screen"/>
-       <test pkg="agvnavigator" test-name="agvNavTest" type="agvNavTest" />
+   <node name="agv_navigation_node" pkg="agv_navigation" type="agv_navigation_node" output="screen"/>
+       <test pkg="agv_navigation" test-name="AgvNavTest" type="AgvNavTest" />
    
    </launch>
