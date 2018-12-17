@@ -90,7 +90,7 @@ catkin_make
 ```
 
 ## Demo
-Firstly we make map of the custom environment using agv_navigator node, then to move around the map autnomously we need to run turtlebot_rrt planner.
+Firstly we make map of the custom environment using agv_navigator node, then to move around the map autonomously we need to run turtlebot_rrt planner.
 After following the build instructions:
 
 To run the demo, in a new terminal:
@@ -155,7 +155,20 @@ make run_tests
 
 
 #### Code coverage
-< will be updated >
+To see the code coverage execute the following command in the build folder of your carkin workspace. Make sure you have `catkin_make` and `make run_tests` earlier
+
+```
+lcov --directory agv_navigation/CMakeFiles/agv_navigation_node.dir/src/ --capture --output-file coverage.info
+```
+To Read the generated coverage file, execute
+`lcov --list coverage.info`
+
+To generate a HTML file for better viewing and understanding the lcov code coverage, execute the following command
+`genhtml coverage.info --output-directory out`
+
+This will create a folder named `out` in the current directory.
+Open `out/index.html` to view the code coverage details.
+
 
 ## Doxygen Documentation
 < will be updated >
