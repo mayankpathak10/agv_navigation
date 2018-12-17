@@ -162,20 +162,24 @@ bool RRTPlanner::makePlan(const geometry_msgs::PoseStamped& start,
 std::pair<float, float> RRTPlanner::GetRandomPoint() {
     // generate random x and y coords within map bounds
     std::pair<float, float> random_point;
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    // std::random_device rd;
+    // std::mt19937 gen(rd());
     float map_width = costmap_->getSizeInMetersX();
     float map_height = costmap_->getSizeInMetersY();
 
-    ROS_DEBUG("map height,weidht = %2f, %2f", map_height, map_width);
+    ROS_WARN("map height,weidht = %2f, %2f", map_height, map_width);
 
     /* generate secret number between 1 and 10: */
-    double x = rand() % 20 - 9;
+    double x = rand() % 10 - 5;
     // x = x - 20;
 
     /* generate secret number between 1 and 10: */
-    double y = rand() % 25 - 5;
+    double y = rand() % 10 - 5;
 
+
+    ROS_WARN("random x,y");
+    std::cout << "x" << x;
+    std::cout << "y" << y;
     random_point.first = x;    // x(gen);
     random_point.second = y;   // y(gen);
 
