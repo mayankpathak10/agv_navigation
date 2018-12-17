@@ -197,7 +197,42 @@ firefox index.html
 
 
 ## Recording a Bag file
-< will be updated >
+```
+cd ~/catkin_ws/
+source devel/setup.bash
+roslaunch agv_navigation agvnav.launch rec:=1
+```
+This will save a bag file in the results folder of the package.
+
+To inspect the bag file, In a new terminal:
+```
+cd ~/catkin_ws/
+source devel/setup.bash
+cd src/agv_navigation/Results
+rosbag info recording.bag
+```
+
+To replay the bag file, 
+The bag file inside the Results folder was compressed due to size issues, to run it, follow:
+(Git only accepts 100MB files)
+```
+cd ~/catkin_ws/
+cd src/agv_navigation/Results
+rosbag decompress -f recording.bag
+```
+
+
+first run rosmaster from a terminal:
+```
+roscore
+```
+Now, from the results folder run the following command in a new terminal:
+```
+cd ~/catkin_ws/
+source devel/setup.bash
+cd src/agv_navigation/Results
+rosbag play recording.bag
+```
 
 ## License
 MIT License

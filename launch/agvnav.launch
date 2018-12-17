@@ -9,6 +9,6 @@
    <node name="agv_navigation_node" pkg="agv_navigation" type="agv_navigation_node" output="screen"/>
    
 
-   <node name="record" pkg="rosbag" type="record" args="-a -O $(find agv_navigation)/results/recording.bag -x /camera/(.*)" if="$(arg rec)"/>
+   <node name="record" pkg="rosbag" type="record" args="-a -O $(find agv_navigation)/Results/recording.bag -x /camera/(.*)" if="$(arg rec)"/>
 
 </launch>
