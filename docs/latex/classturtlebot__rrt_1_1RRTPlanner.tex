@@ -1,0 +1,322 @@
+\hypertarget{classturtlebot__rrt_1_1RRTPlanner}{}\section{turtlebot\+\_\+rrt\+:\+:R\+R\+T\+Planner Class Reference}
+\label{classturtlebot__rrt_1_1RRTPlanner}\index{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}}
+
+
+Inheritance diagram for turtlebot\+\_\+rrt\+:\+:R\+R\+T\+Planner\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classturtlebot__rrt_1_1RRTPlanner__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for turtlebot\+\_\+rrt\+:\+:R\+R\+T\+Planner\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classturtlebot__rrt_1_1RRTPlanner__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classturtlebot__rrt_1_1RRTPlanner_a64bd617e0889067fb6a2514b304939f0}{R\+R\+T\+Planner} ()\hypertarget{classturtlebot__rrt_1_1RRTPlanner_a64bd617e0889067fb6a2514b304939f0}{}\label{classturtlebot__rrt_1_1RRTPlanner_a64bd617e0889067fb6a2514b304939f0}
+
+\begin{DoxyCompactList}\small\item\em Constructor for \hyperlink{classturtlebot__rrt_1_1RRTPlanner}{R\+R\+T\+Planner}. \end{DoxyCompactList}\item 
+\hyperlink{classturtlebot__rrt_1_1RRTPlanner_ab6a87e2501b5b750f7c5e6b93bb8fa0a}{R\+R\+T\+Planner} (std\+::string name, costmap\+\_\+2d\+::\+Costmap2\+D\+R\+OS $\ast$costmap\+\_\+ros)
+\begin{DoxyCompactList}\small\item\em Constructor for \hyperlink{classturtlebot__rrt_1_1RRTPlanner}{R\+R\+T\+Planner}. \end{DoxyCompactList}\item 
+void \hyperlink{classturtlebot__rrt_1_1RRTPlanner_a55b8df1e76bd8daf5411bbaaea058102}{initialize} (std\+::string name, costmap\+\_\+2d\+::\+Costmap2\+D\+R\+OS $\ast$costmap\+\_\+ros)
+\begin{DoxyCompactList}\small\item\em Initialize the ros handle. \end{DoxyCompactList}\item 
+bool \hyperlink{classturtlebot__rrt_1_1RRTPlanner_a923e270ae622186b06cfbb44fc1b50b0}{make\+Plan} (const geometry\+\_\+msgs\+::\+Pose\+Stamped \&start, const geometry\+\_\+msgs\+::\+Pose\+Stamped \&goal, std\+::vector$<$ geometry\+\_\+msgs\+::\+Pose\+Stamped $>$ \&plan)
+\begin{DoxyCompactList}\small\item\em follows the virtual method of the base class \end{DoxyCompactList}\item 
+std\+::vector$<$ bool $>$ \hyperlink{classturtlebot__rrt_1_1RRTPlanner_a37827fa1a390fc0014deb4cd487e8079}{get\+Obstacle\+Map} ()
+\begin{DoxyCompactList}\small\item\em returns the obstacle map \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classturtlebot__rrt_1_1Vertex}{turtlebot\+\_\+rrt\+::\+Vertex} $>$ \hyperlink{classturtlebot__rrt_1_1RRTPlanner_a7fa3dc4af8671dea1261f91d995442d9}{get\+Vertex\+Tree} ()\hypertarget{classturtlebot__rrt_1_1RRTPlanner_a7fa3dc4af8671dea1261f91d995442d9}{}\label{classturtlebot__rrt_1_1RRTPlanner_a7fa3dc4af8671dea1261f91d995442d9}
+
+\begin{DoxyCompactList}\small\item\em returns the rrt vertex tree \end{DoxyCompactList}\item 
+std\+::pair$<$ float, float $>$ \hyperlink{classturtlebot__rrt_1_1RRTPlanner_a85eeb91e48f93df556e549be8d39a4ad}{Get\+Random\+Point} ()
+\begin{DoxyCompactList}\small\item\em Gets a random point in the map space. \end{DoxyCompactList}\item 
+int \hyperlink{classturtlebot__rrt_1_1RRTPlanner_a8379a32f6eae2b178b3f76982fa4f9f9}{Get\+Closest\+Vertex} (std\+::pair$<$ float, float $>$ random\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Gets the closest vertex to the given point. \end{DoxyCompactList}\item 
+void \hyperlink{classturtlebot__rrt_1_1RRTPlanner_ab5be64444ba31b9ddcf2e1b134d0c5f8}{add\+Vertex} (\hyperlink{classturtlebot__rrt_1_1Vertex}{turtlebot\+\_\+rrt\+::\+Vertex} new\+\_\+vertex)
+\begin{DoxyCompactList}\small\item\em adds a new vertex to the rrt vertex tree \end{DoxyCompactList}\item 
+float \hyperlink{classturtlebot__rrt_1_1RRTPlanner_a5836b6fe15e2d33e753868b0f95f0c3f}{Get\+Distance} (std\+::pair$<$ float, float $>$ start\+\_\+point, std\+::pair$<$ float, float $>$ end\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Euclidean distance between two points. \end{DoxyCompactList}\item 
+bool \hyperlink{classturtlebot__rrt_1_1RRTPlanner_a21e3230c57b811d41d87439aaad5d052}{Move\+Towards\+Point} (int closest\+\_\+vertex, std\+::pair$<$ float, float $>$ random\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Moves from the closest vertex towards the random point  Begins at the closest point and attempts to move step\+\_\+size\+\_\+ towards the random point. Each step along the way at delta\+\_\+ intervals is checked for obstacles. If an obstacle is encountered the function returns false. If it makes it from the closest vertex to step\+\_\+size\+\_\+ towards the random point a new vertex is created and added to vertex\+\_\+list\+\_\+ and the function returns true. \end{DoxyCompactList}\item 
+bool \hyperlink{classturtlebot__rrt_1_1RRTPlanner_a86f3447362049feed7251a99d0c2a4a4}{Reached\+Goal} (int new\+\_\+vertex)
+\begin{DoxyCompactList}\small\item\em Is vertex within goal\+\_\+radius\+\_\+ of the goal. \end{DoxyCompactList}\item 
+std\+::vector$<$ geometry\+\_\+msgs\+::\+Pose\+Stamped $>$ \hyperlink{classturtlebot__rrt_1_1RRTPlanner_a91ceb6a9aa57b6e18df4e74bd95a07b3}{Build\+Plan} (int goal\+\_\+index, const geometry\+\_\+msgs\+::\+Pose\+Stamped \&start, const geometry\+\_\+msgs\+::\+Pose\+Stamped \&goal)
+\begin{DoxyCompactList}\small\item\em builds the plan from vertices and returns in Pose\+Stamped \end{DoxyCompactList}\item 
+int \hyperlink{classturtlebot__rrt_1_1RRTPlanner_a6e4ef816e70c37f222da73fa40b78b38}{Find\+Path} (const geometry\+\_\+msgs\+::\+Pose\+Stamped \&start, const geometry\+\_\+msgs\+::\+Pose\+Stamped \&goal)
+\begin{DoxyCompactList}\small\item\em returns the best path \end{DoxyCompactList}\item 
+bool \hyperlink{classturtlebot__rrt_1_1RRTPlanner_a969afbff1661ae9a6738159065f280a0}{Is\+Safe} (std\+::pair$<$ float, float $>$ start\+\_\+point, std\+::pair$<$ float, float $>$ end\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Checks if the path is safe between start\+\_\+point and end\+\_\+point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}!R\+R\+T\+Planner@{R\+R\+T\+Planner}}
+\index{R\+R\+T\+Planner@{R\+R\+T\+Planner}!turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}}
+\subsubsection[{\texorpdfstring{R\+R\+T\+Planner(std\+::string name, costmap\+\_\+2d\+::\+Costmap2\+D\+R\+O\+S $\ast$costmap\+\_\+ros)}{RRTPlanner(std::string name, costmap_2d::Costmap2DROS *costmap_ros)}}]{\setlength{\rightskip}{0pt plus 5cm}turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner\+::\+R\+R\+T\+Planner (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name, }
+\item[{costmap\+\_\+2d\+::\+Costmap2\+D\+R\+OS $\ast$}]{costmap\+\_\+ros}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1RRTPlanner_ab6a87e2501b5b750f7c5e6b93bb8fa0a}{}\label{classturtlebot__rrt_1_1RRTPlanner_ab6a87e2501b5b750f7c5e6b93bb8fa0a}
+
+
+Constructor for \hyperlink{classturtlebot__rrt_1_1RRTPlanner}{R\+R\+T\+Planner}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em costmap\+\_\+ros} & cost\+\_\+map ros wrapper \\
+\hline
+{\em name} & name to associate to the node \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}!add\+Vertex@{add\+Vertex}}
+\index{add\+Vertex@{add\+Vertex}!turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}}
+\subsubsection[{\texorpdfstring{add\+Vertex(turtlebot\+\_\+rrt\+::\+Vertex new\+\_\+vertex)}{addVertex(turtlebot_rrt::Vertex new_vertex)}}]{\setlength{\rightskip}{0pt plus 5cm}void turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner\+::add\+Vertex (
+\begin{DoxyParamCaption}
+\item[{{\bf turtlebot\+\_\+rrt\+::\+Vertex}}]{new\+\_\+vertex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classturtlebot__rrt_1_1RRTPlanner_ab5be64444ba31b9ddcf2e1b134d0c5f8}{}\label{classturtlebot__rrt_1_1RRTPlanner_ab5be64444ba31b9ddcf2e1b134d0c5f8}
+
+
+adds a new vertex to the rrt vertex tree 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+vertex} & the new vertex to be added \\
+\hline
+\end{DoxyParams}
+\index{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}!Build\+Plan@{Build\+Plan}}
+\index{Build\+Plan@{Build\+Plan}!turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}}
+\subsubsection[{\texorpdfstring{Build\+Plan(int goal\+\_\+index, const geometry\+\_\+msgs\+::\+Pose\+Stamped \&start, const geometry\+\_\+msgs\+::\+Pose\+Stamped \&goal)}{BuildPlan(int goal_index, const geometry_msgs::PoseStamped &start, const geometry_msgs::PoseStamped &goal)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ geometry\+\_\+msgs\+::\+Pose\+Stamped $>$ turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner\+::\+Build\+Plan (
+\begin{DoxyParamCaption}
+\item[{int}]{goal\+\_\+index, }
+\item[{const geometry\+\_\+msgs\+::\+Pose\+Stamped \&}]{start, }
+\item[{const geometry\+\_\+msgs\+::\+Pose\+Stamped \&}]{goal}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1RRTPlanner_a91ceb6a9aa57b6e18df4e74bd95a07b3}{}\label{classturtlebot__rrt_1_1RRTPlanner_a91ceb6a9aa57b6e18df4e74bd95a07b3}
+
+
+builds the plan from vertices and returns in Pose\+Stamped 
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal\+\_\+index} & the index of the vertex that has reached the goal \\
+\hline
+{\em start} & the starting location of the robot as passed to make\+Plan \\
+\hline
+{\em goal} & the goal location of the robot as passed to make\+Plan \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of geometry\+\_\+msgs\+:Pose\+Stamped from the start to the goal 
+\end{DoxyReturn}
+\index{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}!Find\+Path@{Find\+Path}}
+\index{Find\+Path@{Find\+Path}!turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}}
+\subsubsection[{\texorpdfstring{Find\+Path(const geometry\+\_\+msgs\+::\+Pose\+Stamped \&start, const geometry\+\_\+msgs\+::\+Pose\+Stamped \&goal)}{FindPath(const geometry_msgs::PoseStamped &start, const geometry_msgs::PoseStamped &goal)}}]{\setlength{\rightskip}{0pt plus 5cm}int turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner\+::\+Find\+Path (
+\begin{DoxyParamCaption}
+\item[{const geometry\+\_\+msgs\+::\+Pose\+Stamped \&}]{start, }
+\item[{const geometry\+\_\+msgs\+::\+Pose\+Stamped \&}]{goal}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1RRTPlanner_a6e4ef816e70c37f222da73fa40b78b38}{}\label{classturtlebot__rrt_1_1RRTPlanner_a6e4ef816e70c37f222da73fa40b78b38}
+
+
+returns the best path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & starting point of robot \\
+\hline
+{\em goal} & goal point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the index of the point that reaches the goal 
+\end{DoxyReturn}
+\index{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}!Get\+Closest\+Vertex@{Get\+Closest\+Vertex}}
+\index{Get\+Closest\+Vertex@{Get\+Closest\+Vertex}!turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}}
+\subsubsection[{\texorpdfstring{Get\+Closest\+Vertex(std\+::pair$<$ float, float $>$ random\+\_\+point)}{GetClosestVertex(std::pair< float, float > random_point)}}]{\setlength{\rightskip}{0pt plus 5cm}int turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner\+::\+Get\+Closest\+Vertex (
+\begin{DoxyParamCaption}
+\item[{std\+::pair$<$ float, float $>$}]{random\+\_\+point}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1RRTPlanner_a8379a32f6eae2b178b3f76982fa4f9f9}{}\label{classturtlebot__rrt_1_1RRTPlanner_a8379a32f6eae2b178b3f76982fa4f9f9}
+
+
+Gets the closest vertex to the given point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em random\+\_\+point} & A point in the map space \\
+\hline
+{\em vertex\+\_\+list} & the rrt vertex tree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the closest vertex to the given point 
+\end{DoxyReturn}
+\index{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}!Get\+Distance@{Get\+Distance}}
+\index{Get\+Distance@{Get\+Distance}!turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}}
+\subsubsection[{\texorpdfstring{Get\+Distance(std\+::pair$<$ float, float $>$ start\+\_\+point, std\+::pair$<$ float, float $>$ end\+\_\+point)}{GetDistance(std::pair< float, float > start_point, std::pair< float, float > end_point)}}]{\setlength{\rightskip}{0pt plus 5cm}float turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner\+::\+Get\+Distance (
+\begin{DoxyParamCaption}
+\item[{std\+::pair$<$ float, float $>$}]{start\+\_\+point, }
+\item[{std\+::pair$<$ float, float $>$}]{end\+\_\+point}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1RRTPlanner_a5836b6fe15e2d33e753868b0f95f0c3f}{}\label{classturtlebot__rrt_1_1RRTPlanner_a5836b6fe15e2d33e753868b0f95f0c3f}
+
+
+Euclidean distance between two points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+point} & starting point \\
+\hline
+{\em end\+\_\+point} & ending point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+euclidean distance between the points 
+\end{DoxyReturn}
+\index{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}!get\+Obstacle\+Map@{get\+Obstacle\+Map}}
+\index{get\+Obstacle\+Map@{get\+Obstacle\+Map}!turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}}
+\subsubsection[{\texorpdfstring{get\+Obstacle\+Map()}{getObstacleMap()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$bool$>$ turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner\+::get\+Obstacle\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classturtlebot__rrt_1_1RRTPlanner_a37827fa1a390fc0014deb4cd487e8079}{}\label{classturtlebot__rrt_1_1RRTPlanner_a37827fa1a390fc0014deb4cd487e8079}
+
+
+returns the obstacle map 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$bool$>$ Unsafe cells are false, safe cells are true 
+\end{DoxyReturn}
+\index{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}!Get\+Random\+Point@{Get\+Random\+Point}}
+\index{Get\+Random\+Point@{Get\+Random\+Point}!turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}}
+\subsubsection[{\texorpdfstring{Get\+Random\+Point()}{GetRandomPoint()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$ float, float $>$ turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner\+::\+Get\+Random\+Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1RRTPlanner_a85eeb91e48f93df556e549be8d39a4ad}{}\label{classturtlebot__rrt_1_1RRTPlanner_a85eeb91e48f93df556e549be8d39a4ad}
+
+
+Gets a random point in the map space. 
+
+\begin{DoxyReturn}{Returns}
+returns an x,y pair 
+\end{DoxyReturn}
+\index{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}!initialize@{initialize}}
+\index{initialize@{initialize}!turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}}
+\subsubsection[{\texorpdfstring{initialize(std\+::string name, costmap\+\_\+2d\+::\+Costmap2\+D\+R\+O\+S $\ast$costmap\+\_\+ros)}{initialize(std::string name, costmap_2d::Costmap2DROS *costmap_ros)}}]{\setlength{\rightskip}{0pt plus 5cm}void turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner\+::initialize (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name, }
+\item[{costmap\+\_\+2d\+::\+Costmap2\+D\+R\+OS $\ast$}]{costmap\+\_\+ros}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1RRTPlanner_a55b8df1e76bd8daf5411bbaaea058102}{}\label{classturtlebot__rrt_1_1RRTPlanner_a55b8df1e76bd8daf5411bbaaea058102}
+
+
+Initialize the ros handle. 
+
+overridden classes from interface nav\+\_\+core\+::\+Base\+Global\+Planner 
+\begin{DoxyParams}{Parameters}
+{\em name} & R\+OS Node\+Handle name \\
+\hline
+{\em costmap\+\_\+ros} & cost\+\_\+map ros wrapper \\
+\hline
+\end{DoxyParams}
+\index{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}!Is\+Safe@{Is\+Safe}}
+\index{Is\+Safe@{Is\+Safe}!turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}}
+\subsubsection[{\texorpdfstring{Is\+Safe(std\+::pair$<$ float, float $>$ start\+\_\+point, std\+::pair$<$ float, float $>$ end\+\_\+point)}{IsSafe(std::pair< float, float > start_point, std::pair< float, float > end_point)}}]{\setlength{\rightskip}{0pt plus 5cm}bool turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner\+::\+Is\+Safe (
+\begin{DoxyParamCaption}
+\item[{std\+::pair$<$ float, float $>$}]{start\+\_\+point, }
+\item[{std\+::pair$<$ float, float $>$}]{end\+\_\+point}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1RRTPlanner_a969afbff1661ae9a6738159065f280a0}{}\label{classturtlebot__rrt_1_1RRTPlanner_a969afbff1661ae9a6738159065f280a0}
+
+
+Checks if the path is safe between start\+\_\+point and end\+\_\+point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+point} & starting point location \\
+\hline
+{\em end\+\_\+point} & ending point location \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if path between points does not intersect obstacles 
+\end{DoxyReturn}
+\index{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}!make\+Plan@{make\+Plan}}
+\index{make\+Plan@{make\+Plan}!turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}}
+\subsubsection[{\texorpdfstring{make\+Plan(const geometry\+\_\+msgs\+::\+Pose\+Stamped \&start, const geometry\+\_\+msgs\+::\+Pose\+Stamped \&goal, std\+::vector$<$ geometry\+\_\+msgs\+::\+Pose\+Stamped $>$ \&plan)}{makePlan(const geometry_msgs::PoseStamped &start, const geometry_msgs::PoseStamped &goal, std::vector< geometry_msgs::PoseStamped > &plan)}}]{\setlength{\rightskip}{0pt plus 5cm}bool turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner\+::make\+Plan (
+\begin{DoxyParamCaption}
+\item[{const geometry\+\_\+msgs\+::\+Pose\+Stamped \&}]{start, }
+\item[{const geometry\+\_\+msgs\+::\+Pose\+Stamped \&}]{goal, }
+\item[{std\+::vector$<$ geometry\+\_\+msgs\+::\+Pose\+Stamped $>$ \&}]{plan}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1RRTPlanner_a923e270ae622186b06cfbb44fc1b50b0}{}\label{classturtlebot__rrt_1_1RRTPlanner_a923e270ae622186b06cfbb44fc1b50b0}
+
+
+follows the virtual method of the base class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & start pose \\
+\hline
+{\em goal} & goal pose \\
+\hline
+{\em plan} & generated path \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool, true 
+\end{DoxyReturn}
+\index{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}!Move\+Towards\+Point@{Move\+Towards\+Point}}
+\index{Move\+Towards\+Point@{Move\+Towards\+Point}!turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}}
+\subsubsection[{\texorpdfstring{Move\+Towards\+Point(int closest\+\_\+vertex, std\+::pair$<$ float, float $>$ random\+\_\+point)}{MoveTowardsPoint(int closest_vertex, std::pair< float, float > random_point)}}]{\setlength{\rightskip}{0pt plus 5cm}bool turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner\+::\+Move\+Towards\+Point (
+\begin{DoxyParamCaption}
+\item[{int}]{closest\+\_\+vertex, }
+\item[{std\+::pair$<$ float, float $>$}]{random\+\_\+point}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1RRTPlanner_a21e3230c57b811d41d87439aaad5d052}{}\label{classturtlebot__rrt_1_1RRTPlanner_a21e3230c57b811d41d87439aaad5d052}
+
+
+Moves from the closest vertex towards the random point  Begins at the closest point and attempts to move step\+\_\+size\+\_\+ towards the random point. Each step along the way at delta\+\_\+ intervals is checked for obstacles. If an obstacle is encountered the function returns false. If it makes it from the closest vertex to step\+\_\+size\+\_\+ towards the random point a new vertex is created and added to vertex\+\_\+list\+\_\+ and the function returns true. 
+
+\begin{DoxyReturn}{Returns}
+true if a move was made, false if blocked by obstacle 
+\end{DoxyReturn}
+\index{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}!Reached\+Goal@{Reached\+Goal}}
+\index{Reached\+Goal@{Reached\+Goal}!turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner@{turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner}}
+\subsubsection[{\texorpdfstring{Reached\+Goal(int new\+\_\+vertex)}{ReachedGoal(int new_vertex)}}]{\setlength{\rightskip}{0pt plus 5cm}bool turtlebot\+\_\+rrt\+::\+R\+R\+T\+Planner\+::\+Reached\+Goal (
+\begin{DoxyParamCaption}
+\item[{int}]{new\+\_\+vertex}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1RRTPlanner_a86f3447362049feed7251a99d0c2a4a4}{}\label{classturtlebot__rrt_1_1RRTPlanner_a86f3447362049feed7251a99d0c2a4a4}
+
+
+Is vertex within goal\+\_\+radius\+\_\+ of the goal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & vertex to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if within goal\+\_\+radius\+\_\+ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/bob/catkin\+\_\+ws/src/agv\+\_\+navigation/include/turtlebot\+\_\+rrt/turtlebot\+\_\+rrt.\+hpp\item 
+/home/bob/catkin\+\_\+ws/src/agv\+\_\+navigation/src/turtlebot\+\_\+rrt.\+cpp\end{DoxyCompactItemize}

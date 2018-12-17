@@ -1,0 +1,161 @@
+\hypertarget{classturtlebot__rrt_1_1Vertex}{}\section{turtlebot\+\_\+rrt\+:\+:Vertex Class Reference}
+\label{classturtlebot__rrt_1_1Vertex}\index{turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classturtlebot__rrt_1_1Vertex_a08a9a7531fe92edd3618661deb182a1c}{Vertex} ()\hypertarget{classturtlebot__rrt_1_1Vertex_a08a9a7531fe92edd3618661deb182a1c}{}\label{classturtlebot__rrt_1_1Vertex_a08a9a7531fe92edd3618661deb182a1c}
+
+\begin{DoxyCompactList}\small\item\em Simple \hyperlink{classturtlebot__rrt_1_1Vertex}{Vertex} constructor. \end{DoxyCompactList}\item 
+\hyperlink{classturtlebot__rrt_1_1Vertex_aa613d6a7411e6b4317711d928ab4a9c5}{Vertex} (float x, float y, int index, int parent\+\_\+index)
+\begin{DoxyCompactList}\small\item\em the constructor for a \hyperlink{classturtlebot__rrt_1_1Vertex}{Vertex} \end{DoxyCompactList}\item 
+\hyperlink{classturtlebot__rrt_1_1Vertex_ab3159441d4b9dff836fa895b8d7f0081}{$\sim$\+Vertex} ()\hypertarget{classturtlebot__rrt_1_1Vertex_ab3159441d4b9dff836fa895b8d7f0081}{}\label{classturtlebot__rrt_1_1Vertex_ab3159441d4b9dff836fa895b8d7f0081}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{classturtlebot__rrt_1_1Vertex_a3eae280de131550a7b69fda426933e24}{set\+\_\+location} (float x, float y)
+\begin{DoxyCompactList}\small\item\em sets the location \end{DoxyCompactList}\item 
+void \hyperlink{classturtlebot__rrt_1_1Vertex_ada62799b4c6cba1ba5fc812a935c7487}{set\+\_\+index} (int index)
+\begin{DoxyCompactList}\small\item\em sets the index of the vertex \end{DoxyCompactList}\item 
+void \hyperlink{classturtlebot__rrt_1_1Vertex_a84efb31fdc47e4e2b4283100029db265}{set\+\_\+parent} (int index)
+\begin{DoxyCompactList}\small\item\em sets the parent vertex \end{DoxyCompactList}\item 
+std\+::pair$<$ float, float $>$ \hyperlink{classturtlebot__rrt_1_1Vertex_aa71422cc4c6d3cc363478beaedf23a88}{get\+\_\+location} ()
+\begin{DoxyCompactList}\small\item\em returns the x,y location of the vertex \end{DoxyCompactList}\item 
+int \hyperlink{classturtlebot__rrt_1_1Vertex_a63512ad96a03558512b69280329761b8}{get\+\_\+index} ()
+\begin{DoxyCompactList}\small\item\em returns the index of the vertex \end{DoxyCompactList}\item 
+int \hyperlink{classturtlebot__rrt_1_1Vertex_a41cae85656e4b2e32bee26ba5876b6d1}{get\+\_\+parent} ()
+\begin{DoxyCompactList}\small\item\em returns the index of the parent vertex \end{DoxyCompactList}\item 
+bool \hyperlink{classturtlebot__rrt_1_1Vertex_a1c743214d3566891fb0c88c60c337a08}{operator==} (const \hyperlink{classturtlebot__rrt_1_1Vertex}{Vertex} \&v)\hypertarget{classturtlebot__rrt_1_1Vertex_a1c743214d3566891fb0c88c60c337a08}{}\label{classturtlebot__rrt_1_1Vertex_a1c743214d3566891fb0c88c60c337a08}
+
+\begin{DoxyCompactList}\small\item\em overload of == operator \end{DoxyCompactList}\item 
+bool \hyperlink{classturtlebot__rrt_1_1Vertex_a4bde0da65a589b6afc8f5c50aa6b1b2b}{operator!=} (const \hyperlink{classturtlebot__rrt_1_1Vertex}{Vertex} \&v)\hypertarget{classturtlebot__rrt_1_1Vertex_a4bde0da65a589b6afc8f5c50aa6b1b2b}{}\label{classturtlebot__rrt_1_1Vertex_a4bde0da65a589b6afc8f5c50aa6b1b2b}
+
+\begin{DoxyCompactList}\small\item\em overload of != operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{Vertex(float x, float y, int index, int parent\+\_\+index)}{Vertex(float x, float y, int index, int parent_index)}}]{\setlength{\rightskip}{0pt plus 5cm}turtlebot\+\_\+rrt\+::\+Vertex\+::\+Vertex (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{int}]{index, }
+\item[{int}]{parent\+\_\+index}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1Vertex_aa613d6a7411e6b4317711d928ab4a9c5}{}\label{classturtlebot__rrt_1_1Vertex_aa613d6a7411e6b4317711d928ab4a9c5}
+
+
+the constructor for a \hyperlink{classturtlebot__rrt_1_1Vertex}{Vertex} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x coordinate of the vertex \\
+\hline
+{\em y} & the y coordinate of the vertex \\
+\hline
+{\em index} & the index of the vertex \\
+\hline
+{\em parent\+\_\+index} & the index of the parent vertex \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}!get\+\_\+index@{get\+\_\+index}}
+\index{get\+\_\+index@{get\+\_\+index}!turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{get\+\_\+index()}{get_index()}}]{\setlength{\rightskip}{0pt plus 5cm}int turtlebot\+\_\+rrt\+::\+Vertex\+::get\+\_\+index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1Vertex_a63512ad96a03558512b69280329761b8}{}\label{classturtlebot__rrt_1_1Vertex_a63512ad96a03558512b69280329761b8}
+
+
+returns the index of the vertex 
+
+\begin{DoxyReturn}{Returns}
+index of the vertex 
+\end{DoxyReturn}
+\index{turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}!get\+\_\+location@{get\+\_\+location}}
+\index{get\+\_\+location@{get\+\_\+location}!turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{get\+\_\+location()}{get_location()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$ float, float $>$ turtlebot\+\_\+rrt\+::\+Vertex\+::get\+\_\+location (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1Vertex_aa71422cc4c6d3cc363478beaedf23a88}{}\label{classturtlebot__rrt_1_1Vertex_aa71422cc4c6d3cc363478beaedf23a88}
+
+
+returns the x,y location of the vertex 
+
+\begin{DoxyReturn}{Returns}
+returns std\+::pair$<$x,y$>$ 
+\end{DoxyReturn}
+\index{turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}!get\+\_\+parent@{get\+\_\+parent}}
+\index{get\+\_\+parent@{get\+\_\+parent}!turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{get\+\_\+parent()}{get_parent()}}]{\setlength{\rightskip}{0pt plus 5cm}int turtlebot\+\_\+rrt\+::\+Vertex\+::get\+\_\+parent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1Vertex_a41cae85656e4b2e32bee26ba5876b6d1}{}\label{classturtlebot__rrt_1_1Vertex_a41cae85656e4b2e32bee26ba5876b6d1}
+
+
+returns the index of the parent vertex 
+
+\begin{DoxyReturn}{Returns}
+returns the index of the parent 
+\end{DoxyReturn}
+\index{turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}!set\+\_\+index@{set\+\_\+index}}
+\index{set\+\_\+index@{set\+\_\+index}!turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{set\+\_\+index(int index)}{set_index(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}void turtlebot\+\_\+rrt\+::\+Vertex\+::set\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1Vertex_ada62799b4c6cba1ba5fc812a935c7487}{}\label{classturtlebot__rrt_1_1Vertex_ada62799b4c6cba1ba5fc812a935c7487}
+
+
+sets the index of the vertex 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & index of the vertex \\
+\hline
+\end{DoxyParams}
+\index{turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}!set\+\_\+location@{set\+\_\+location}}
+\index{set\+\_\+location@{set\+\_\+location}!turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{set\+\_\+location(float x, float y)}{set_location(float x, float y)}}]{\setlength{\rightskip}{0pt plus 5cm}void turtlebot\+\_\+rrt\+::\+Vertex\+::set\+\_\+location (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1Vertex_a3eae280de131550a7b69fda426933e24}{}\label{classturtlebot__rrt_1_1Vertex_a3eae280de131550a7b69fda426933e24}
+
+
+sets the location 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x location of vertex \\
+\hline
+{\em y} & y location of vertex \\
+\hline
+\end{DoxyParams}
+\index{turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}!set\+\_\+parent@{set\+\_\+parent}}
+\index{set\+\_\+parent@{set\+\_\+parent}!turtlebot\+\_\+rrt\+::\+Vertex@{turtlebot\+\_\+rrt\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{set\+\_\+parent(int index)}{set_parent(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}void turtlebot\+\_\+rrt\+::\+Vertex\+::set\+\_\+parent (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{classturtlebot__rrt_1_1Vertex_a84efb31fdc47e4e2b4283100029db265}{}\label{classturtlebot__rrt_1_1Vertex_a84efb31fdc47e4e2b4283100029db265}
+
+
+sets the parent vertex 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent\+\_\+index} & index of the parent vertex \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/bob/catkin\+\_\+ws/src/agv\+\_\+navigation/include/turtlebot\+\_\+rrt/vertex.\+hpp\item 
+/home/bob/catkin\+\_\+ws/src/agv\+\_\+navigation/src/\hyperlink{vertex_8cpp}{vertex.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,91 @@
+\hypertarget{classExplorer}{}\section{Explorer Class Reference}
+\label{classExplorer}\index{Explorer@{Explorer}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classExplorer_acbedef0262785b6983d1fe9b4f2c6242}{Explorer} ()\hypertarget{classExplorer_acbedef0262785b6983d1fe9b4f2c6242}{}\label{classExplorer_acbedef0262785b6983d1fe9b4f2c6242}
+
+\begin{DoxyCompactList}\small\item\em Default Constructor for \hyperlink{classExplorer}{Explorer} Class. \end{DoxyCompactList}\item 
+float \hyperlink{classExplorer_a12f687220c68689fff2836117cbabcdd}{obst\+Dist} ()
+\begin{DoxyCompactList}\small\item\em Get distance from obstacles. \end{DoxyCompactList}\item 
+bool \hyperlink{classExplorer_a0cecdf01e97d519673f4650a54890f65}{rotate\+Bot} ()
+\begin{DoxyCompactList}\small\item\em Get Rota flag which sets the rotation. \end{DoxyCompactList}\item 
+void \hyperlink{classExplorer_a3e025ac39b333bf3b3e095e909051abb}{set\+Rotation} ()\hypertarget{classExplorer_a3e025ac39b333bf3b3e095e909051abb}{}\label{classExplorer_a3e025ac39b333bf3b3e095e909051abb}
+
+\begin{DoxyCompactList}\small\item\em Set Rota\+Flag to false. \end{DoxyCompactList}\item 
+void \hyperlink{classExplorer_a5d3932cfbd5d9afd87b0725fd4d06628}{Scan\+Callback} (const sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr \&input)
+\begin{DoxyCompactList}\small\item\em scan subscriber to find closest obstacle \end{DoxyCompactList}\item 
+void \hyperlink{classExplorer_a0086e1667fd575ff4e9996c7e36b4905}{Rotatetimer\+Callback} (const ros\+::\+Timer\+Event \&event)
+\begin{DoxyCompactList}\small\item\em sets the rota flag to true every 45 sec  event is the ros\+::\+Timer\+Event structure \end{DoxyCompactList}\item 
+geometry\+\_\+msgs\+::\+Twist \hyperlink{classExplorer_ac7fb6055b14fe25964055ff292202f3d}{direction} ()
+\begin{DoxyCompactList}\small\item\em generate twist messages to move agv \end{DoxyCompactList}\item 
+\hyperlink{classExplorer_aa1b0a71e92e003e9162a5ba99d843392}{$\sim$\+Explorer} ()\hypertarget{classExplorer_aa1b0a71e92e003e9162a5ba99d843392}{}\label{classExplorer_aa1b0a71e92e003e9162a5ba99d843392}
+
+\begin{DoxyCompactList}\small\item\em Destructor for navigator class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{Explorer@{Explorer}!direction@{direction}}
+\index{direction@{direction}!Explorer@{Explorer}}
+\subsubsection[{\texorpdfstring{direction()}{direction()}}]{\setlength{\rightskip}{0pt plus 5cm}geometry\+\_\+msgs\+::\+Twist Explorer\+::direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classExplorer_ac7fb6055b14fe25964055ff292202f3d}{}\label{classExplorer_ac7fb6055b14fe25964055ff292202f3d}
+
+
+generate twist messages to move agv 
+
+Twist messages(action) \index{Explorer@{Explorer}!obst\+Dist@{obst\+Dist}}
+\index{obst\+Dist@{obst\+Dist}!Explorer@{Explorer}}
+\subsubsection[{\texorpdfstring{obst\+Dist()}{obstDist()}}]{\setlength{\rightskip}{0pt plus 5cm}float Explorer\+::obst\+Dist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classExplorer_a12f687220c68689fff2836117cbabcdd}{}\label{classExplorer_a12f687220c68689fff2836117cbabcdd}
+
+
+Get distance from obstacles. 
+
+dist\+Obst \index{Explorer@{Explorer}!rotate\+Bot@{rotate\+Bot}}
+\index{rotate\+Bot@{rotate\+Bot}!Explorer@{Explorer}}
+\subsubsection[{\texorpdfstring{rotate\+Bot()}{rotateBot()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Explorer\+::rotate\+Bot (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classExplorer_a0cecdf01e97d519673f4650a54890f65}{}\label{classExplorer_a0cecdf01e97d519673f4650a54890f65}
+
+
+Get Rota flag which sets the rotation. 
+
+Rota Flag \index{Explorer@{Explorer}!Rotatetimer\+Callback@{Rotatetimer\+Callback}}
+\index{Rotatetimer\+Callback@{Rotatetimer\+Callback}!Explorer@{Explorer}}
+\subsubsection[{\texorpdfstring{Rotatetimer\+Callback(const ros\+::\+Timer\+Event \&event)}{RotatetimerCallback(const ros::TimerEvent &event)}}]{\setlength{\rightskip}{0pt plus 5cm}void Explorer\+::\+Rotatetimer\+Callback (
+\begin{DoxyParamCaption}
+\item[{const ros\+::\+Timer\+Event \&}]{event}
+\end{DoxyParamCaption}
+)}\hypertarget{classExplorer_a0086e1667fd575ff4e9996c7e36b4905}{}\label{classExplorer_a0086e1667fd575ff4e9996c7e36b4905}
+
+
+sets the rota flag to true every 45 sec  event is the ros\+::\+Timer\+Event structure 
+
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\index{Explorer@{Explorer}!Scan\+Callback@{Scan\+Callback}}
+\index{Scan\+Callback@{Scan\+Callback}!Explorer@{Explorer}}
+\subsubsection[{\texorpdfstring{Scan\+Callback(const sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr \&input)}{ScanCallback(const sensor_msgs::LaserScan::ConstPtr &input)}}]{\setlength{\rightskip}{0pt plus 5cm}void Explorer\+::\+Scan\+Callback (
+\begin{DoxyParamCaption}
+\item[{const sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr \&}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{classExplorer_a5d3932cfbd5d9afd87b0725fd4d06628}{}\label{classExplorer_a5d3932cfbd5d9afd87b0725fd4d06628}
+
+
+scan subscriber to find closest obstacle 
+
+input is te pointer to array with obstacle distances 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/bob/catkin\+\_\+ws/src/agv\+\_\+navigation/include/Explorer.\+hpp\item 
+/home/bob/catkin\+\_\+ws/src/agv\+\_\+navigation/src/Explorer.\+cpp\end{DoxyCompactItemize}
