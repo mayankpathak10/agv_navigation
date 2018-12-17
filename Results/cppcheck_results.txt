@@ -1,0 +1,36 @@
+mp@mp:~/808XWorkSpace/src/agv_navigation$ cppcheck --enable=all --std=c++11 -I include/ --suppress=missingIncludeSystem $( find . -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/" )
+Checking src/Agv.cpp...
+1/10 files checked 6% done
+Checking src/Explorer.cpp...
+2/10 files checked 17% done
+Checking src/main.cpp...
+3/10 files checked 25% done
+Checking src/turtlebot_rrt.cpp...
+[src/turtlebot_rrt.cpp:49]: (warning) Member variable 'RRTPlanner::costmap_' is not initialized in the constructor.
+[src/turtlebot_rrt.cpp:49]: (warning) Member variable 'RRTPlanner::max_iterations_' is not initialized in the constructor.
+[src/turtlebot_rrt.cpp:49]: (warning) Member variable 'RRTPlanner::current_iterations_' is not initialized in the constructor.
+[src/turtlebot_rrt.cpp:49]: (warning) Member variable 'RRTPlanner::world_model_' is not initialized in the constructor.
+[src/turtlebot_rrt.cpp:49]: (warning) Member variable 'RRTPlanner::goal_radius_' is not initialized in the constructor.
+[src/turtlebot_rrt.cpp:49]: (warning) Member variable 'RRTPlanner::step_size_' is not initialized in the constructor.
+[src/turtlebot_rrt.cpp:49]: (warning) Member variable 'RRTPlanner::delta_' is not initialized in the constructor.
+[src/turtlebot_rrt.cpp:49]: (warning) Member variable 'RRTPlanner::x_origin_' is not initialized in the constructor.
+[src/turtlebot_rrt.cpp:49]: (warning) Member variable 'RRTPlanner::y_origin_' is not initialized in the constructor.
+[src/turtlebot_rrt.cpp:49]: (warning) Member variable 'RRTPlanner::x_goal_' is not initialized in the constructor.
+[src/turtlebot_rrt.cpp:49]: (warning) Member variable 'RRTPlanner::y_goal_' is not initialized in the constructor.
+[src/turtlebot_rrt.cpp:49]: (warning) Member variable 'RRTPlanner::map_width_cells_' is not initialized in the constructor.
+[src/turtlebot_rrt.cpp:49]: (warning) Member variable 'RRTPlanner::map_height_cells_' is not initialized in the constructor.
+4/10 files checked 69% done
+Checking src/vertex.cpp...
+5/10 files checked 74% done
+Checking test/AgvNavTest.cpp...
+6/10 files checked 76% done
+Checking test/AgvTest.cpp...
+7/10 files checked 80% done
+Checking test/ExplorerTest.cpp...
+8/10 files checked 88% done
+Checking test/rrtpath_test.cpp...
+9/10 files checked 94% done
+Checking test/vertex_test.cpp...
+10/10 files checked 100% done
+[src/turtlebot_rrt.cpp:101]: (style) The function 'makePlan' is never used.
+(information) Cppcheck cannot find all the include files (use --check-config for details)

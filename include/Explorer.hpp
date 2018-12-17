@@ -43,7 +43,7 @@
 #include <sensor_msgs/LaserScan.h>
 
 class Explorer {
-  public:
+  public:  // NOLINT
     /**
      * @brief  Default Constructor for Explorer Class
      */
@@ -94,7 +94,7 @@ class Explorer {
      */
     ~Explorer();
 
-  private:
+  private:  // NOLINT
     /**
      * @brief flag for rotation of agv
      */

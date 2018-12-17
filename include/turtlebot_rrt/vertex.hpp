@@ -36,15 +36,15 @@
  */
 
 
-#ifndef INCLUDE_TURTLEBOT_RRT_VERTEX_H_
-#define INCLUDE_TURTLEBOT_RRT_VERTEX_H_
+#ifndef INCLUDE_TURTLEBOT_RRT_VERTEX_HPP_
+#define INCLUDE_TURTLEBOT_RRT_VERTEX_HPP_
 
 #include <cmath>
 #include <utility>
 
 namespace turtlebot_rrt {
 class Vertex {
-  private:
+  private:  // NOLINT
     /**
      * @brief the x coordinate of the vertex
      */
@@ -65,7 +65,7 @@ class Vertex {
      */
     int parent_index_;
 
-  public:
+  public:  // NOLINT
     /**
      * @brief Simple Vertex constructor
      */
@@ -138,4 +138,4 @@ class Vertex {
 };
 }  // namespace turtlebot_rrt
 
-#endif  // INCLUDE_TURTLEBOT_RRT_VERTEX_H_
+#endif  // INCLUDE_TURTLEBOT_RRT_VERTEX_HPP_

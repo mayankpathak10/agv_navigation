@@ -49,7 +49,7 @@
  *
  */
 class Agv {
-  public:
+  public:  // NOLINT
     /**
      * @brief Constructor for Agv Class
      */
@@ -67,7 +67,7 @@ class Agv {
      */
     ~Agv();
 
-  private:
+  private:  // NOLINT
     ros::NodeHandle n;
     /**
       * @brief Creates Explorer Object
@@ -91,4 +91,4 @@ class Agv {
     ros::Publisher actionPub;
 };
 
-#endif /* INCLUDE_AGV_HPP_ */
+#endif  // INCLUDE_AGV_HPP_

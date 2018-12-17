@@ -170,11 +170,11 @@ std::pair<float, float> RRTPlanner::GetRandomPoint() {
     ROS_WARN("map height,weidht = %2f, %2f", map_height, map_width);
 
     /* generate secret number between 1 and 10: */
-    double x = rand() % 10 - 5;
+    double x = rand() % 10 - 5;  // NOLINT
     // x = x - 20;
 
     /* generate secret number between 1 and 10: */
-    double y = rand() % 10 - 5;
+    double y = rand() % 10 - 5; //NOLINT
 
 
     ROS_WARN("random x,y");

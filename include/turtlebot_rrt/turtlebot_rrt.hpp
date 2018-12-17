@@ -35,8 +35,8 @@
  * @date 2018-12-15
  */
 
-#ifndef INCLUDE_TURTLEBOT_RRT_TURTLEBOT_RRT_H_
-#define INCLUDE_TURTLEBOT_RRT_TURTLEBOT_RRT_H_
+#ifndef INCLUDE_TURTLEBOT_RRT_TURTLEBOT_RRT_HPP_
+#define INCLUDE_TURTLEBOT_RRT_TURTLEBOT_RRT_HPP_
 
 /** include ROS libraries **/
 #include <ros/ros.h>
@@ -66,7 +66,7 @@
 
 namespace turtlebot_rrt {
 class RRTPlanner : public nav_core::BaseGlobalPlanner {
-  public:
+  public:  // NOLINT
     /**
     * @brief Constructor for RRTPlanner
     */
@@ -96,7 +96,7 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     */
     bool makePlan(const geometry_msgs::PoseStamped& start,
                   const geometry_msgs::PoseStamped& goal,
-                  std::vector<geometry_msgs::PoseStamped>& plan);
+                  std::vector<geometry_msgs::PoseStamped>& plan);  // NOLINT
 
     /**
     * @brief returns the obstacle map
@@ -194,7 +194,7 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     bool IsSafe(std::pair<float, float> start_point,
                 std::pair<float, float> end_point);
 
-  private:
+  private:  // NOLINT
     /**
     * @brief ROS node handle
     */
@@ -286,4 +286,4 @@ class RRTPlanner : public nav_core::BaseGlobalPlanner {
     std::vector<turtlebot_rrt::Vertex> vertex_list_;
 };
 }  // namespace turtlebot_rrt
-#endif  // INCLUDE_TURTLEBOT_RRT_TURTLEBOT_RRT_H_
+#endif  // INCLUDE_TURTLEBOT_RRT_TURTLEBOT_RRT_HPP_
