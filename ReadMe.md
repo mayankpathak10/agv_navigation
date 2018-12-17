@@ -65,7 +65,7 @@ This project development is divided into 3 weekly sprints. Detailed Sprint plann
 ## Custom Gazebo World
 A Gazebo simulation world of dimensions 10m x 10m (length x width) is prepared to implement this project.
 
-![Gazebo_world](https://github.com/mayankpathak10/AGV_Navigation/blob/master/images/gazebo_world.jpg)
+![gazebo](https://github.com/mayankpathak10/agv_navigation/blob/master/images/gazebo.jpg)
 
 ## How to build
 If you do not have a catkin workspace, in a new terminal:
@@ -115,11 +115,15 @@ To view the saved map. In a new terminal
 ```
 eog <map_name>.pgm
 ```
+Developed Custom world's Saved Map is as shown below
+![Rviz_Map](https://github.com/mayankpathak10/agv_navigation/blob/master/images/Rviz_Map.png)
+
 Once you have created your map place the ```.world```, ```.yaml```, and ```.pgm``` file into the ```/maps```  directory all using the same file name and then use the ```map_name``` arg with the launch file:
 
 ```
 roslaunch agv_navigation rrt_planner.launch
 ```
+![acme_floor_gazebo_rviz](https://github.com/mayankpathak10/agv_navigation/blob/master/images/acme_floor_gazebo_rviz.png)
 ### Launch file args
 ```map_name``` indicates the map that you want to use. This assumes that you already have a ```.world```, ```.yaml```, and a ```.pgm``` file in the ```/maps``` directory.
 
@@ -139,6 +143,7 @@ To set a goal for the robot switch to the Rviz window and and click "2D Nav Goal
 ## Running Rostest
 To run rostest, in a new terminal:
 ```
+
 cd ~/catkin_ws/
 source devel/setup.bash
 ```
