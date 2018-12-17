@@ -136,7 +136,6 @@ This will launch rviz and gazebo simultaneously showing turtlebot ready to navig
 To set a goal for the robot switch to the Rviz window and and click "2D Nav Goal" at the top and select on the map where you want the robot to go.
 
 
-## Testing
 ## Running Rostest
 To run rostest, in a new terminal:
 ```
@@ -171,13 +170,31 @@ Open `out/index.html` to view the code coverage details.
 
 
 ## Doxygen Documentation
-< will be updated >
+To generate Doxygen Documentation in HTML and LaTEX, follow the next steps:
+```
+cd <path to repository>
+mkdir <documentation_folder_name>
+cd <documentation_folder_name>
+doxygen -g <config_file_name>
+```
+Inside the configuration file, update:
+```
+PROJECT_NAME = 'project name'
+INPUT = ../agv_navigation ../include ../test
+```
+Doxygen files will be generated to /docs folder
 
+To view them in a browser:
+```
+cd docs
+cd html
+firefox index.html
+```
 ## Known issues and Bugs
-< will be updated >
+* When gazebo initializes it  throws some errors of missing plugins and thi followin error:
+  SpawnModel: Failure - model name mobile_base already exist.
+* Visualization markers not shown by Rviz
 
-## Other API and dependencies
-< will be updated >
 
 ## Recording a Bag file
 < will be updated >
