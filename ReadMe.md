@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/mayankpathak10/AGV_Navigation.svg?branch=master)](https://travis-ci.com/mayankpathak10/AGV_Navigation) [![Coverage Status](https://coveralls.io/repos/github/mayankpathak10/agv_navigation/badge.svg?branch=master)](https://coveralls.io/github/mayankpathak10/agv_navigation?branch=master) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://api.travis-ci.com/mayankpathak10/agv_navigation.svg?branch=master)](https://travis-ci.com/mayankpathak10/AGV_Navigation) [![Coverage Status](https://coveralls.io/repos/github/mayankpathak10/agv_navigation/badge.svg?branch=master)](https://coveralls.io/github/mayankpathak10/agv_navigation?branch=master) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 
 ## Overview:
@@ -52,12 +52,15 @@ This project development is divided into 3 weekly sprints. Detailed Sprint plann
 - Catkin
 - Gazebo
 - Turtlebot Gazebo package
-- Packages included in ROS Kinetic:
-	- roscpp
+- Packages included in ROS Kinetic:	
+    - roscpp
 	- std_msgs
 	- genmsg
 	- geometry_msgs
 	- gmapping
+	- Gmapping
+	- map_server
+
 
 ## Custom Gazebo World
 A Gazebo simulation world of dimensions 10m x 10m (length x width) is prepared to implement this project.
@@ -65,16 +68,92 @@ A Gazebo simulation world of dimensions 10m x 10m (length x width) is prepared t
 ![Gazebo_world](https://github.com/mayankpathak10/AGV_Navigation/blob/master/images/gazebo_world.jpg)
 
 ## How to build
-< will be updated >
+If you do not have a catkin workspace, in a new terminal:
+```
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/
+catkin_make
+source devel/setup.bash
+cd src/
+git clone https://github.com/mayankpathak10/agv_navigation
+cd ..
+catkin_make
+```
+If you wish to run this code in an existing catkin workspace:
+```
+cd ~/catkin_ws/
+source devel/setup.bash
+cd src/
+git clone https://github.com/mayankpathak10/agv_navigation
+cd ..
+catkin_make
+```
 
 ## Demo
-< will be updated >
+Firstly we make map of the custom environment using agv_navigator node, then to move around the map autnomously we need to run turtlebot_rrt planner.
+After following the build instructions:
 
-## How to run
-< will be updated>
+To run the demo, in a new terminal:
+```
+cd ~/catkin_ws/
+source devel/setup.bash
+roslaunch agv_navigator agvnavigator.launch
+```
+This will load the turtlebot in the gazebo world and wait for 15 seconds. Now to run gmapping and Rviz, in a new terminal:
+```
+cd ~/catkin_ws/
+source devel/setup.bash
+roslaunch agv_navigation demo.launch 
+```
+This will open rviz to visualize the map in realtime as it updates its location and surroundings. One can also watch the agv move around in gazebo map as it maps the environment. 
+### Saving the Map
+ To save the map as created by the rviz, in a new terminal:
+```
+rosrun map_server map_saver -f <map_name>
+```
+To view the saved map. In a new terminal
+```
+eog <map_name>.pgm
+```
+Once you have created your map place the ```.world```, ```.yaml```, and ```.pgm``` file into the ```/maps```  directory all using the same file name and then use the ```map_name``` arg with the launch file:
+
+```
+roslaunch agv_navigation rrt_planner.launch
+```
+### Launch file args
+```map_name``` indicates the map that you want to use. This assumes that you already have a ```.world```, ```.yaml```, and a ```.pgm``` file in the ```/maps``` directory.
+
+```step_size``` indicates the size of the step that the RRT algorithm uses. Sometimes called epsilon. A lower value is more accurate, a higher value is faster. Parameter is entered in meters. Has a default value of 2.5.
+
+```max_iterations``` determines the maximum number of vertices that will be created searching for a path between the starting point and the goal. This prevents infinite loops in the event the goal is unreachable. Parameter is an integer. Has a default value of 200,000.
+
+```delta``` is the incremental amount that will be checked along each step_size for obstacles. Choosing a lower value is more accurate, a higher value is faster. Parameter is entered in meters. Has a default value of 1.0.
+
+```goal_radius``` is how close you have to be to the goal for it to count. Parameter is entered in meters. Has a default value of 1.0.
+
+
+This will launch rviz and gazebo simultaneously showing turtlebot ready to navigate autonomously. 
+To set a goal for the robot switch to the Rviz window and and click "2D Nav Goal" at the top and select on the map where you want the robot to go.
+
 
 ## Testing
-< will be updated >
+## Running Rostest
+To run rostest, in a new terminal:
+```
+cd ~/catkin_ws/
+source devel/setup.bash
+```
+Open second terminal and run
+```
+roscore
+```
+In the first terminal run the following
+```
+cd build/
+make run_tests
+```
+
+
 #### Code coverage
 < will be updated >
 
