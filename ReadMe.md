@@ -10,19 +10,19 @@ The AGV (robot here) drives around in a simulated world, navigating through obst
 
 After preparing a map of the environment, the robot uses path planning algorithm (A* algorithm) and finds a optimal path between its current position and the goal point.
 
+The presentation for the project can be found on Youtube [here](https://youtu.be/zoL4Fnlx-bw). The video provides an overview of the project, UML diagrams, as well as a demo.
+
 ## About Authors
 __Bhargav Dandamudi:__ Graduate Student in M.Eng., Robotics, working as Teaching Assitant of Grad. Level Robotics Course. I am intrested to pursue career in Computer vision, planning and Medical Robotics related field. 
 
 __Mayank Pathak:__ Graduate Student in M.Eng., Robotics, working as Research Assistant in Sensors and Actuators Lab in the University of Maryland, College Park. I am interested to pursue career in the field of Computer Vision and Machine Learning.
 
 ## Project Approach:
-1. Develop a custom map in the gazebo.
+1. Develop a custom world in the gazebo.
 	A map containing walls and other obstacles representing industrial workshop scenario is prepared.  
-2. Use `frontier_exploration` ros package to get occupancy grid of the map.
-	Using the sensors (lidar for gmapping) avaiable on the turtle bot, 2D occupancy grid map is prepared.
-3. Using this map, a path between two given points (Start point and Destination) is calculated using the below path planning algorithm.
-4. Implement Astar algorithm to find the path.
-	A* algorithm is one of the best algorithm to approximate the shortest path between two points on a map or graph.  At each step, it proceeds by selecting the node which has lowest sum of the two parameters: movement cost from start node to current node, and heuristic distance between current node and goal node.
+2. A 2D map is prepared using the laserscan, position and pose information of turtlebot from gazebo world and move the turtlebot around in this unknown map to avoid obstacles and generate 2D map.
+3. Using this map, a path between two given points (Start point and Destination) is calculated using Rapidly Exploring Random Tree (RRT) path planning algorithm.
+4. RRT algorithm is implemented in its simplicity to find the next closest vertex near the randomly generated point and move to that point, repeat this and gradually reach the goal point.
 5. TurtleBot navigates, avoiding obstacles and reaches the destination. 
 	After the path is known, turtlebot navigates in the simulated gazebo world using the node coordinates.
 6. Quality is assured by delivering Unit Tests for overall source code and full coverage in coveralls. 
@@ -30,8 +30,9 @@ __Mayank Pathak:__ Graduate Student in M.Eng., Robotics, working as Research Ass
 The UML diagrams for the project are as follows:
 ### UML Activity Diagram
 ![activity_diag](https://github.com/mayankpathak10/AGV_Navigation/blob/master/images/agv_navigation_ActivityDiagram.jpeg)
-### UML Class Diagram
-![class_diag](https://github.com/mayankpathak10/AGV_Navigation/blob/master/images/agv_navigation_classDiagram.jpeg)
+### UML Class Diagrams
+![mapping_class_diag](https://github.com/mayankpathak10/agv_navigation/blob/master/images/Revision_2ActivityDiag.jpeg)
+![planning_class_diag](https://github.com/mayankpathak10/agv_navigation/blob/master/images/Revision2_agv_navigation.jpeg)
 
 ## Deveopment Using Solo Iterative Process (SIP) and Test-Driven Development (TDD)
 In development of this software module, along with test-driven development(TDD), solo interative process (SIP) was followed. Using SIP this software module is divided into two parts: the product backlog, and code of the software.
