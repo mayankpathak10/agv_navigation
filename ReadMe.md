@@ -4,28 +4,28 @@
 ## Overview:
 The main idea of this project is to implement a path planning algorithm on an Automated Guided Vehicle (AGV) to plan its route from a start point to end point. An AGV is an advanced mobile robot that follows wires, markers, invisible UV markers, cameras and lasers to move. AGVs follow a defined path every time, they are not suitable for non-repetitive tasks and decrease the flexibility of operations overall.
 
-We aim to demonstrate that the above-mentioned limitations of AGV can be alleviated by implementing a novel path planning technique (A* algorithm) for searching the path in a known environment. To get the information about the environment, this method is topped by a g-mapping technique using SLAM and develop a binary map of the environment to feed to the A* algorithm.
+We aim to demonstrate that the above-mentioned limitations of AGV can be alleviated by implementing a novel path planning technique (RRT algorithm) for searching the path in a known environment. To get the information about the environment, this method is topped by a g-mapping technique using SLAM and develop a binary map of the environment to feed to the RRT algorithm.
 
-The AGV (robot here) drives around in a simulated world, navigating through obstacles using LIDAR sensor. Whenever an obstacle is recognized, the g-mapping algorithm prepares a binary 2D map of the environment. For example, if the robot finds an obstacle while moving around, like a wall or any solid surface, it refers that coordinates as 1 , meaning that there is a obstacle in front of the robot.
+The AGV (TurtleBot in our project) drives around in a simulated world, navigating through obstacles using LIDAR sensor. Whenever an obstacle is recognized, the g-mapping algorithm prepares a binary 2D map of the environment. For example, if the robot finds an obstacle while moving around, like a wall or any solid surface, it refers that coordinates as 1 , meaning that there is a obstacle in front of the robot.
 
-After preparing a map of the environment, the robot uses path planning algorithm (A* algorithm) and finds a optimal path between its current position and the goal point.
+After preparing a map of the environment, the robot uses path planning algorithm (RRT algorithm) and finds a optimal path between its current position and the goal point.
 
 The presentation for the project can be found on Youtube [here](https://youtu.be/zoL4Fnlx-bw). The video provides an overview of the project, UML diagrams, as well as a demo.
 
 ## About Authors
-__Bhargav Dandamudi:__ Graduate Student in M.Eng., Robotics, working as Teaching Assitant of Grad. Level Robotics Course. I am intrested to pursue career in Computer vision, planning and Medical Robotics related field. 
+__Bhargav Dandamudi:__ Graduate Student in M.Eng., Robotics, working as Teaching Assitant of Grad. Level Robotics Course. I am intrested to pursue career in Computer vision, planning and Medical Robotics related field.
 
-__Mayank Pathak:__ Graduate Student in M.Eng., Robotics, working as Research Assistant in Sensors and Actuators Lab in the University of Maryland, College Park. I am interested to pursue career in the field of Computer Vision and Machine Learning.
+__Mayank Pathak:__ Graduate Student in M.Eng., Robotics, working as Research Assistant in Sensors and Actuators Lab in the University of Maryland, College Park. I am interested in pursue career in the field of Computer Vision and Machine Learning.
 
 ## Project Approach:
 1. Develop a custom world in the gazebo.
-	A map containing walls and other obstacles representing industrial workshop scenario is prepared.  
+	A map containing walls and other obstacles representing industrial workshop scenario is prepared.
 2. A 2D map is prepared using the laserscan, position and pose information of turtlebot from gazebo world and move the turtlebot around in this unknown map to avoid obstacles and generate 2D map.
 3. Using this map, a path between two given points (Start point and Destination) is calculated using Rapidly Exploring Random Tree (RRT) path planning algorithm.
 4. RRT algorithm is implemented in its simplicity to find the next closest vertex near the randomly generated point and move to that point, repeat this and gradually reach the goal point.
-5. TurtleBot navigates, avoiding obstacles and reaches the destination. 
+5. TurtleBot navigates, avoiding obstacles and reaches the destination.
 	After the path is known, turtlebot navigates in the simulated gazebo world using the node coordinates.
-6. Quality is assured by delivering Unit Tests for overall source code and full coverage in coveralls. 
+6. Quality is assured by delivering Unit Tests for overall source code and full coverage in coveralls.
 
 The UML diagrams for the project are as follows:
 ### UML Activity Diagram
@@ -53,7 +53,7 @@ This project development is divided into 3 weekly sprints. Detailed Sprint plann
 - Catkin
 - Gazebo
 - Turtlebot Gazebo package
-- Packages included in ROS Kinetic:	
+- Packages included in ROS Kinetic:
     - roscpp
 	- std_msgs
 	- genmsg
@@ -104,9 +104,9 @@ This will load the turtlebot in the gazebo world and wait for 15 seconds. Now to
 ```
 cd ~/catkin_ws/
 source devel/setup.bash
-roslaunch agv_navigation demo.launch 
+roslaunch agv_navigation demo.launch
 ```
-This will open rviz to visualize the map in realtime as it updates its location and surroundings. One can also watch the agv move around in gazebo map as it maps the environment. 
+This will open rviz to visualize the map in realtime as it updates its location and surroundings. One can also watch the agv move around in gazebo map as it maps the environment.
 ### Saving the Map
  To save the map as created by the rviz, in a new terminal:
 ```
@@ -137,7 +137,7 @@ roslaunch agv_navigation rrt_planner.launch
 ```goal_radius``` is how close you have to be to the goal for it to count. Parameter is entered in meters. Has a default value of 1.0.
 
 
-This will launch rviz and gazebo simultaneously showing turtlebot ready to navigate autonomously. 
+This will launch rviz and gazebo simultaneously showing turtlebot ready to navigate autonomously.
 To set a goal for the robot switch to the Rviz window and and click "2D Nav Goal" at the top and select on the map where you want the robot to go.
 
 
@@ -218,7 +218,7 @@ cd src/agv_navigation/Results
 rosbag info recording.bag
 ```
 
-To replay the bag file, 
+To replay the bag file,
 The bag file inside the Results folder was compressed due to size issues, to run it, follow:
 (Git only accepts 100MB files)
 ```
