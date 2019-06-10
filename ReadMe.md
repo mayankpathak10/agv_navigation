@@ -29,7 +29,7 @@ __Mayank Pathak:__ Graduate Student in M.Eng., Robotics, working as Research Ass
 
 The UML diagrams for the project are as follows:
 ### UML Activity Diagram
-![activity_diag](https://github.com/mayankpathak10/AGV_Navigation/blob/master/images/agv_navigation_ActivityDiagram.jpeg)
+![activity_diag](https://github.com/mayankpathak10/agv_navigation/blob/master/UML/Revision3/agv_navigation_ActivityDiagram.jpeg)
 ### UML Class Diagrams
 ![mapping_class_diag](https://github.com/mayankpathak10/agv_navigation/blob/master/images/Revision_2ActivityDiag.jpeg)
 ![planning_class_diag](https://github.com/mayankpathak10/agv_navigation/blob/master/images/Revision2_agv_navigation.jpeg)
